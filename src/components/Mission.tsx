@@ -34,7 +34,7 @@ export default function Mission() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">
-            Building Cebu&apos;s AI-first developer community
+            Building Cebu&apos;s AI-first community
           </h2>
           <p className="text-lg text-text-secondary leading-relaxed">
             Cursor Community Cebu brings together the city&apos;s most ambitious
