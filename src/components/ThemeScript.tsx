@@ -6,7 +6,7 @@ export default function ThemeScript() {
       var stored = localStorage.getItem("${STORAGE_KEY}");
       var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
       var theme = stored === "light" || stored === "dark" ? stored : (prefersLight ? "light" : "dark");
-      document.documentElement.classList.add(theme);
+      document.documentElement.setAttribute("data-theme", theme);
     })();
   `;
   return <script dangerouslySetInnerHTML={{ __html: script }} />;
