@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -10,8 +10,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-bg-card border border-border rounded-full mb-8 animate-fade-in-up">
-          <Sparkles size={14} className="text-text-secondary" />
+        <div className="inline-flex items-center px-5 py-2 bg-bg-card border border-border rounded-full mb-8 animate-fade-in-up">
           <span className="text-sm text-text-secondary font-medium">
             Officially supported by the Cursor team
           </span>

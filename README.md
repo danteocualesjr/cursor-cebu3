@@ -1,37 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cursor Community Cebu
+
+The official landing page for **Cursor Community Cebu** — a community of founders, developers, designers, and builders in Cebu, Philippines, officially supported by the [Cursor](https://cursor.com) team.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm
+
+### Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 16** (App Router)
+- **Tailwind CSS v4**
+- **TypeScript**
+- **Lucide React** (icons)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+  app/
+    layout.tsx       # Root layout, fonts, metadata
+    page.tsx         # Main landing page
+    globals.css      # Tailwind config + custom styles
+  components/
+    Navbar.tsx       # Sticky navigation with mobile menu
+    Hero.tsx         # Hero section with gradient text
+    Mission.tsx      # About / mission pillars
+    Events.tsx       # Events with filter tabs
+    Gallery.tsx      # Photo gallery with lightbox
+    Speakers.tsx     # Past & upcoming speakers
+    GetInvolved.tsx  # Attend / Speak / Sponsor cards
+    Contact.tsx      # Contact form + social links
+    Footer.tsx       # Footer with links
+  data/
+    events.ts        # Event data (easy to update)
+    speakers.ts      # Speaker data
+    gallery.ts       # Gallery image data
+  lib/
+    constants.ts     # Site config, social links, nav
+```
 
-## Deploy on Vercel
+## Updating Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All content is stored in TypeScript files under `src/data/` for easy editing:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# cursor-cebu3
+- **Events**: Edit `src/data/events.ts` to add/update events
+- **Speakers**: Edit `src/data/speakers.ts` to add/update speakers
+- **Gallery**: Edit `src/data/gallery.ts` to add/update photos
+- **Site Config**: Edit `src/lib/constants.ts` for social links, contact email, etc.
+
+## Deployment
+
+This project is ready for deployment on [Vercel](https://vercel.com):
+
+```bash
+npx vercel
+```
+
+## Contact
+
+For questions about Cursor Community Cebu, reach out to [dante@nativestack.ai](mailto:dante@nativestack.ai).
+
+## Links
+
+- [Cursor](https://cursor.com)
+- [Discord](#) (placeholder)
+- [X (Twitter)](#) (placeholder)
+- [LinkedIn](#) (placeholder)
