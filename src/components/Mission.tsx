@@ -29,14 +29,14 @@ const pillars = [
 
 export default function Mission() {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-bg">
+    <section id="about" className="py-16 sm:py-24 lg:py-32 bg-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4 sm:mb-6">
             Building Cebu&apos;s AI-first community
           </h2>
-          <p className="text-lg text-text-secondary leading-relaxed">
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
             Cursor Community Cebu brings together the city&apos;s most ambitious
             builders — founders, developers, designers, product managers, and
             Cursor power users — to foster learning, spark collaboration, and
@@ -45,13 +45,13 @@ export default function Mission() {
         </div>
 
         {/* Pillars */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 stagger-children">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={pillar.title}
-                className="group p-6 bg-bg-card rounded-2xl border border-border-light hover:border-border-hover hover:bg-bg-card-hover transition-all"
+                className="group p-5 sm:p-6 bg-bg-card rounded-2xl border border-border-light hover:border-border-hover hover:bg-bg-card-hover transition-all"
               >
                 <div className="w-10 h-10 bg-bg-elevated rounded-xl flex items-center justify-center mb-4 border border-border-light group-hover:bg-white group-hover:text-black transition-colors">
                   <Icon size={20} />
@@ -68,7 +68,7 @@ export default function Mission() {
         </div>
 
         {/* Cursor Support Callout */}
-        <div className="mt-16 p-8 bg-bg-card rounded-2xl border border-border-light text-center glow">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-bg-card rounded-2xl border border-border-light text-center glow">
           <p className="text-text-muted text-sm uppercase tracking-wider font-medium mb-4">
             Officially Supported By
           </p>

@@ -29,27 +29,27 @@ const cards = [
 
 export default function GetInvolved() {
   return (
-    <section id="get-involved" className="py-24 sm:py-32 bg-bg">
+    <section id="get-involved" className="py-16 sm:py-24 lg:py-32 bg-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
             Get Involved
           </h2>
-          <p className="text-lg text-text-secondary leading-relaxed">
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
             There are many ways to be part of Cursor Community Cebu. Whether you
             want to learn, teach, or support — we&apos;d love to have you.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 stagger-children">
           {cards.map((card) => {
             const Icon = card.icon;
             return (
               <div
                 key={card.title}
-                className="group relative p-8 bg-bg-card rounded-2xl border border-border-light hover:border-border-hover hover:bg-bg-card-hover transition-all"
+                className="group relative p-6 sm:p-8 bg-bg-card rounded-2xl border border-border-light hover:border-border-hover hover:bg-bg-card-hover transition-all"
               >
                 <div className="w-12 h-12 bg-bg-elevated rounded-xl flex items-center justify-center mb-6 border border-border-light group-hover:bg-white group-hover:text-black transition-colors">
                   <Icon size={24} />
@@ -62,7 +62,7 @@ export default function GetInvolved() {
                 </p>
                 <a
                   href={card.href}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-accent-hover transition-colors group/link"
+                  className="inline-flex items-center gap-2 py-2 text-sm font-medium text-white hover:text-accent-hover transition-colors group/link min-h-[44px]"
                 >
                   {card.cta}
                   <ArrowRight
@@ -76,8 +76,8 @@ export default function GetInvolved() {
         </div>
 
         {/* Book Event Banner */}
-        <div className="mt-16 p-8 sm:p-12 bg-white rounded-2xl text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 bg-white rounded-2xl text-center">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-3 sm:mb-4">
             Want to host an event with us?
           </h3>
           <p className="text-black/60 max-w-xl mx-auto mb-8 leading-relaxed">
@@ -87,7 +87,7 @@ export default function GetInvolved() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-black text-white font-medium rounded-full hover:bg-black/80 transition-colors group"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-black text-white font-medium rounded-full hover:bg-black/80 transition-colors group active:bg-black/70"
           >
             Book an Event
             <ArrowRight

@@ -32,15 +32,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-bg-elevated">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-bg-elevated">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Left: Info */}
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
               Get in Touch
             </h2>
-            <p className="text-lg text-text-secondary leading-relaxed mb-8">
+            <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-6 sm:mb-8">
               Have a question, idea, or proposal? We&apos;d love to hear from
               you. Reach out and we&apos;ll get back to you as soon as we can.
             </p>
@@ -72,30 +72,30 @@ export default function Contact() {
                     Connect With Us
                   </h3>
                   <div className="flex gap-3">
-                    <a
-                      href={SOCIAL_LINKS.discord}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
-                    >
-                      Discord
-                    </a>
-                    <a
-                      href={SOCIAL_LINKS.x}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
-                    >
-                      X (Twitter)
-                    </a>
-                    <a
-                      href={SOCIAL_LINKS.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
-                    >
-                      LinkedIn
-                    </a>
+                  <a
+                    href={SOCIAL_LINKS.discord}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
+                  >
+                    Discord
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
+                  >
+                    X (Twitter)
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
+                  >
+                    LinkedIn
+                  </a>
                   </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               {/* Name */}
               <div>
                 <label
@@ -121,7 +121,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-bg-card border border-border-light rounded-xl text-sm text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-xl text-base text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-bg-card border border-border-light rounded-xl text-sm text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-xl text-base text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
@@ -161,7 +161,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-bg-card border border-border-light rounded-xl text-sm text-text focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors appearance-none"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-xl text-base text-text focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors appearance-none"
                 >
                   {subjects.map((s) => (
                     <option key={s} value={s}>
@@ -187,7 +187,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-bg-card border border-border-light rounded-xl text-sm text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors resize-none"
+                  className="w-full px-4 py-3.5 min-h-[120px] bg-bg-card border border-border-light rounded-xl text-base text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors resize-none"
                   placeholder="Tell us what's on your mind..."
                 />
               </div>
@@ -195,7 +195,7 @@ export default function Contact() {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-colors"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-white text-black font-medium rounded-full hover:bg-white/90 transition-colors active:bg-white/80"
               >
                 Send Message
                 <Send size={16} />

@@ -23,7 +23,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
   return (
     <div className="group bg-bg-card rounded-2xl border border-border-light overflow-hidden hover:border-border-hover hover:bg-bg-card-hover transition-all">
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-40 sm:h-48 overflow-hidden">
         <img
           src={event.image}
           alt={event.title}
@@ -49,7 +49,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-5 sm:p-6">
         <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-accent-hover transition-colors">
           {event.title}
         </h3>
@@ -83,7 +83,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
         {event.status === "upcoming" && event.registrationUrl && (
           <a
             href={event.registrationUrl}
-            className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-accent-hover transition-colors group/link"
+            className="inline-flex items-center gap-2 py-2 text-sm font-medium text-white hover:text-accent-hover transition-colors group/link min-h-[44px]"
           >
             Register Now
             <ArrowRight
@@ -113,26 +113,26 @@ export default function Events() {
   });
 
   return (
-    <section id="events" className="py-24 sm:py-32 bg-bg-elevated">
+    <section id="events" className="py-16 sm:py-24 lg:py-32 bg-bg-elevated">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
             Events
           </h2>
-          <p className="text-lg text-text-secondary leading-relaxed">
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
             From casual coffee-and-code sessions to intense hackathons — there&apos;s
             always something happening in the Cursor Community Cebu.
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-10 sm:mb-12">
           {filters.map((filter) => (
             <button
               key={filter.value}
               onClick={() => setActiveFilter(filter.value)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+              className={`px-4 py-3 min-h-[44px] text-sm font-medium rounded-full transition-colors ${
                 activeFilter === filter.value
                   ? "bg-white text-black"
                   : "bg-bg-card text-text-secondary border border-border-light hover:text-white hover:border-border-hover"
@@ -144,7 +144,7 @@ export default function Events() {
         </div>
 
         {/* Event Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {sortedEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}

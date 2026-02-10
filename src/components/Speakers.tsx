@@ -22,7 +22,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
       </div>
 
       {/* Info */}
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         <h3 className="text-base font-semibold text-white">{speaker.name}</h3>
         <p className="text-sm text-text-secondary mt-0.5">
           {speaker.role} at {speaker.company}
@@ -41,7 +41,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 href={speaker.social.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-white transition-colors"
+                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-white transition-colors"
                 aria-label={`${speaker.name} on X`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -54,7 +54,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 href={speaker.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-white transition-colors"
+                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-white transition-colors"
                 aria-label={`${speaker.name} on LinkedIn`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -67,7 +67,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 href={speaker.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-white transition-colors"
+                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-white transition-colors"
                 aria-label={`${speaker.name} on GitHub`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -87,14 +87,14 @@ export default function Speakers() {
   const upcomingSpeakers = speakers.filter((s) => s.status === "upcoming");
 
   return (
-    <section id="speakers" className="py-24 sm:py-32 bg-bg-elevated">
+    <section id="speakers" className="py-16 sm:py-24 lg:py-32 bg-bg-elevated">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
             Speakers
           </h2>
-          <p className="text-lg text-text-secondary leading-relaxed">
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
             Learn from builders, founders, and power users who are pushing the
             boundaries of what&apos;s possible with Cursor.
           </p>
@@ -102,11 +102,11 @@ export default function Speakers() {
 
         {/* Past Speakers */}
         {pastSpeakers.length > 0 && (
-          <div className="mb-16">
-            <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider mb-6">
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider mb-4 sm:mb-6">
               Past Speakers
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {pastSpeakers.map((speaker) => (
                 <SpeakerCard key={speaker.id} speaker={speaker} />
               ))}
@@ -116,11 +116,11 @@ export default function Speakers() {
 
         {/* Upcoming Speakers */}
         {upcomingSpeakers.length > 0 && (
-          <div className="mb-12">
-            <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider mb-6">
+          <div className="mb-10 sm:mb-12">
+            <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider mb-4 sm:mb-6">
               Upcoming Speakers
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {upcomingSpeakers.map((speaker) => (
                 <SpeakerCard key={speaker.id} speaker={speaker} />
               ))}
@@ -129,10 +129,10 @@ export default function Speakers() {
         )}
 
         {/* CTA */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 sm:mt-8">
           <a
             href="#get-involved"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-all group"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-white text-black font-medium rounded-full hover:bg-white/90 transition-all group active:bg-white/80"
           >
             Apply to be a Speaker
             <ArrowRight

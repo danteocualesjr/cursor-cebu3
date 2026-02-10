@@ -16,25 +16,25 @@ export default function Gallery() {
   const hasMore = galleryImages.length > INITIAL_COUNT;
 
   return (
-    <section id="gallery" className="py-24 sm:py-32 bg-bg">
+    <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
             Moments from Our Events
           </h2>
-          <p className="text-lg text-text-secondary leading-relaxed">
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
             A glimpse into the energy, collaboration, and creativity that
             defines our community gatherings.
           </p>
         </div>
 
         {/* Masonry-style Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-3 sm:gap-4 space-y-3 sm:space-y-4">
           {displayedImages.map((image, index) => (
             <div
               key={image.id}
-              className={`break-inside-avoid group cursor-pointer relative rounded-2xl overflow-hidden border border-border-light hover:border-border-hover transition-all ${
+              className={`break-inside-avoid group cursor-pointer relative rounded-xl sm:rounded-2xl overflow-hidden border border-border-light hover:border-border-hover transition-all touch-manipulation ${
                 index % 3 === 0 ? "aspect-[4/5]" : index % 3 === 1 ? "aspect-[4/3]" : "aspect-square"
               }`}
               onClick={() => setSelectedImage(image.src)}
@@ -42,6 +42,7 @@ export default function Gallery() {
               <img
                 src={image.src}
                 alt={image.alt}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -58,10 +59,10 @@ export default function Gallery() {
 
         {/* View all / Show less */}
         {hasMore && (
-          <div className="mt-10 text-center">
+          <div className="mt-8 sm:mt-10 text-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border-light hover:border-border-hover hover:bg-bg-card-hover text-text-secondary hover:text-white transition-all font-medium"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 sm:py-3 min-h-[48px] rounded-full border border-border-light hover:border-border-hover hover:bg-bg-card-hover text-text-secondary hover:text-white transition-all font-medium active:bg-bg-card-hover"
             >
               {isExpanded ? (
                 <>
@@ -87,7 +88,7 @@ export default function Gallery() {
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
+            className="absolute top-4 right-4 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-white/60 hover:text-white transition-colors"
             aria-label="Close lightbox"
           >
             <X size={24} />

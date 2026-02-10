@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16 min-h-[56px]">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
             <img
@@ -55,45 +55,46 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - 44px min touch target */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-text-secondary hover:text-text transition-colors"
+            className="md:hidden p-3 -m-2 text-text-secondary hover:text-text transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-bg/95 backdrop-blur-xl border-b border-border-light">
+        <div className="md:hidden bg-bg/98 backdrop-blur-xl border-b border-border-light max-h-[calc(100vh-56px)] overflow-y-auto overscroll-contain">
           <div className="px-4 py-4 space-y-1">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2.5 text-sm text-text-secondary hover:text-text hover:bg-bg-card rounded-lg transition-colors"
+                className="block px-4 py-3.5 min-h-[48px] flex items-center text-base text-text-secondary hover:text-text hover:bg-bg-card rounded-xl transition-colors active:bg-bg-card"
               >
                 {link.label}
               </a>
             ))}
-            <div className="pt-3 border-t border-border-light mt-3">
+            <div className="pt-4 border-t border-border-light mt-4 space-y-2">
               <a
                 href={SOCIAL_LINKS.cursor}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 px-3 py-2.5 text-sm text-text-muted hover:text-text-secondary transition-colors"
+                className="flex items-center gap-2 px-4 py-3.5 min-h-[48px] text-base text-text-muted hover:text-text-secondary hover:bg-bg-card rounded-xl transition-colors"
               >
                 Cursor.com
-                <ExternalLink size={12} />
+                <ExternalLink size={14} />
               </a>
               <a
                 href="#get-involved"
                 onClick={() => setIsOpen(false)}
-                className="block mt-2 px-4 py-2.5 bg-white text-black text-sm font-medium rounded-full text-center hover:bg-white/90 transition-colors"
+                className="flex items-center justify-center min-h-[48px] px-4 py-3.5 bg-white text-black text-base font-medium rounded-full hover:bg-white/90 transition-colors active:bg-white/80"
               >
                 Join the Community
               </a>
