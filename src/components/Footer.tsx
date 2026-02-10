@@ -12,9 +12,9 @@ export default function Footer() {
               <img
                 src="/cursor-logo.png"
                 alt="Cursor logo"
-                className="w-7 h-7 invert"
+                className="w-7 h-7 logo-icon"
               />
-              <span className="font-semibold text-white">{SITE_NAME}</span>
+              <span className="font-semibold text-text">{SITE_NAME}</span>
             </div>
             <p className="text-text-secondary text-sm leading-relaxed max-w-sm mb-6">
               Cebu&apos;s official Cursor community. We bring together founders,
@@ -34,7 +34,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">
+            <h3 className="text-sm font-semibold text-text mb-4">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -42,7 +42,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-text-secondary hover:text-white transition-colors"
+                    className="text-sm text-text-secondary hover:text-text transition-colors"
                   >
                     {link.label}
                   </a>
@@ -53,14 +53,14 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Connect</h3>
+            <h3 className="text-sm font-semibold text-text mb-4">Connect</h3>
             <ul className="space-y-2.5">
               <li>
                 <a
                   href={SOCIAL_LINKS.discord}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-text-secondary hover:text-white transition-colors"
+                  className="text-sm text-text-secondary hover:text-text transition-colors"
                 >
                   Discord
                 </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                   href={SOCIAL_LINKS.x}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-text-secondary hover:text-white transition-colors"
+                  className="text-sm text-text-secondary hover:text-text transition-colors"
                 >
                   X (Twitter)
                 </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-text-secondary hover:text-white transition-colors"
+                  className="text-sm text-text-secondary hover:text-text transition-colors"
                 >
                   LinkedIn
                 </a>
@@ -90,7 +90,7 @@ export default function Footer() {
                   href={SOCIAL_LINKS.cursor}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm text-text-secondary hover:text-white transition-colors"
+                  className="flex items-center gap-1 text-sm text-text-secondary hover:text-text transition-colors"
                 >
                   Cursor.com
                   <ExternalLink size={10} />
@@ -112,7 +112,7 @@ export default function Footer() {
               href={SOCIAL_LINKS.cursor}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-white transition-colors"
+              className="text-text-secondary hover:text-text transition-colors"
             >
               Cursor
             </a>

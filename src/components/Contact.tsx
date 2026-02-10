@@ -37,7 +37,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Left: Info */}
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
               Get in Touch
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-6 sm:mb-8">
@@ -52,10 +52,10 @@ export default function Contact() {
                   <Mail size={18} className="text-text-muted" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-white">Email</h3>
+                  <h3 className="text-sm font-semibold text-text">Email</h3>
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-sm text-text-secondary hover:text-white transition-colors"
+                    className="text-sm text-text-secondary hover:text-text transition-colors"
                   >
                     {CONTACT_EMAIL}
                   </a>
@@ -68,7 +68,7 @@ export default function Contact() {
                   <MessageCircle size={18} className="text-text-muted" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-white mb-2">
+                  <h3 className="text-sm font-semibold text-text mb-2">
                     Connect With Us
                   </h3>
                   <div className="flex gap-3">
@@ -76,7 +76,7 @@ export default function Contact() {
                     href={SOCIAL_LINKS.discord}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
+                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-text hover:border-border-hover transition-colors"
                   >
                     Discord
                   </a>
@@ -84,7 +84,7 @@ export default function Contact() {
                     href={SOCIAL_LINKS.x}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
+                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-text hover:border-border-hover transition-colors"
                   >
                     X (Twitter)
                   </a>
@@ -92,7 +92,7 @@ export default function Contact() {
                     href={SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-white hover:border-border-hover transition-colors"
+                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-text hover:border-border-hover transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -195,7 +195,7 @@ export default function Contact() {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-white text-black font-medium rounded-full hover:bg-white/90 transition-colors active:bg-white/80"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-[#22c55e] text-black font-medium rounded-full hover:bg-[#4ade80] transition-colors active:bg-[#16a34a]"
               >
                 Send Message
                 <Send size={16} />

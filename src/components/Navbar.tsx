@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { SITE_NAME, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
             <img
               src="/cursor-logo.png"
               alt="Cursor logo"
-              className="w-7 h-7 invert"
+              className="w-7 h-7 logo-icon"
             />
             <span className="font-semibold text-text text-sm tracking-tight">
               {SITE_NAME}
@@ -37,7 +38,8 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
+            <ThemeToggle />
             <a
               href={SOCIAL_LINKS.cursor}
               target="_blank"
@@ -49,7 +51,7 @@ export default function Navbar() {
             </a>
             <a
               href="#get-involved"
-              className="px-4 py-2 bg-white text-black text-sm font-medium rounded-full hover:bg-white/90 transition-colors"
+              className="px-4 py-2 bg-[#22c55e] text-black text-sm font-medium rounded-full hover:bg-[#4ade80] transition-colors"
             >
               Join the Community
             </a>
@@ -82,6 +84,10 @@ export default function Navbar() {
               </a>
             ))}
             <div className="pt-4 border-t border-border-light mt-4 space-y-2">
+              <div className="flex items-center justify-between px-4 py-2">
+                <span className="text-sm text-text-muted">Theme</span>
+                <ThemeToggle />
+              </div>
               <a
                 href={SOCIAL_LINKS.cursor}
                 target="_blank"
@@ -94,7 +100,7 @@ export default function Navbar() {
               <a
                 href="#get-involved"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center min-h-[48px] px-4 py-3.5 bg-white text-black text-base font-medium rounded-full hover:bg-white/90 transition-colors active:bg-white/80"
+                className="flex items-center justify-center min-h-[48px] px-4 py-3.5 bg-[#22c55e] text-black text-base font-medium rounded-full hover:bg-[#4ade80] transition-colors active:bg-[#16a34a]"
               >
                 Join the Community
               </a>

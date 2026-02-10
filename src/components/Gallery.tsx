@@ -20,7 +20,7 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
             Moments from Our Events
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -47,10 +47,10 @@ export default function Gallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-white text-sm font-medium">
+                  <p className="text-text text-sm font-medium">
                     {image.alt}
                   </p>
-                  <p className="text-white/60 text-xs mt-1">{image.date}</p>
+                  <p className="text-text/60 text-xs mt-1">{image.date}</p>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function Gallery() {
           <div className="mt-8 sm:mt-10 text-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 sm:py-3 min-h-[48px] rounded-full border border-border-light hover:border-border-hover hover:bg-bg-card-hover text-text-secondary hover:text-white transition-all font-medium active:bg-bg-card-hover"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 sm:py-3 min-h-[48px] rounded-full border border-border-light hover:border-border-hover hover:bg-bg-card-hover text-text-secondary hover:text-text transition-all font-medium active:bg-bg-card-hover"
             >
               {isExpanded ? (
                 <>
@@ -88,7 +88,7 @@ export default function Gallery() {
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            className="absolute top-4 right-4 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-text-secondary hover:text-text transition-colors"
             aria-label="Close lightbox"
           >
             <X size={24} />

@@ -13,12 +13,28 @@
   --color-border: #222222;
   --color-border-light: #1a1a1a;
   --color-border-hover: #333333;
-  --color-accent: #EDEDED;
-  --color-accent-hover: #FFFFFF;
+  --color-accent: #22c55e;
+  --color-accent-hover: #4ade80;
   --color-white: #ffffff;
   --color-black: #000000;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Light mode overrides */
+html.light {
+  --color-bg: #fafafa;
+  --color-bg-elevated: #f5f5f5;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f5f5f5;
+  --color-bg-subtle: #f0f0f0;
+  --color-text: #171717;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+  --color-text-faint: #a3a3a3;
+  --color-border: #e5e5e5;
+  --color-border-light: #ebebeb;
+  --color-border-hover: #d4d4d4;
 }
 
 html {
@@ -27,8 +43,8 @@ html {
 }
 
 body {
-  background-color: #0A0A0A;
-  color: #EDEDED;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
@@ -46,7 +62,7 @@ img, video, iframe {
   }
 }
 
-/* Event type badges (dark theme) */
+/* Event type badges */
 .badge-workshop {
   background-color: rgba(46, 125, 50, 0.15);
   color: #66BB6A;
@@ -63,6 +79,12 @@ img, video, iframe {
   background-color: rgba(123, 31, 162, 0.15);
   color: #AB47BC;
 }
+
+/* Light mode badge adjustments */
+html.light .badge-workshop { color: #15803d; }
+html.light .badge-cafe { color: #ea580c; }
+html.light .badge-hackathon { color: #2563eb; }
+html.light .badge-meetup { color: #7c3aed; }
 
 /* Smooth fade-in animation */
 @keyframes fadeInUp {
@@ -102,20 +124,55 @@ img, video, iframe {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #222222;
+  background: var(--color-border);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: var(--color-border-hover);
 }
 
 /* Gradient text helper */
 .gradient-text {
-  background: linear-gradient(to bottom, #FFFFFF, #666666);
+  background: linear-gradient(to bottom, #FFFFFF, #22c55e, #666666);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Light mode gradient */
+html.light .gradient-text {
+  background: linear-gradient(to bottom, #171717, #15803d, #525252);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode glow */
+html.light .glow {
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.04);
+}
+
+/* Logo: invert in dark mode, normal in light */
+.logo-icon {
+  filter: invert(1);
+}
+html.light .logo-icon {
+  filter: none;
+}
+
+/* Hero background glow - adapts to theme */
+.hero-bg-glow {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.04), transparent);
+}
+html.light .hero-bg-glow {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.03), transparent);
+}
+.hero-bg-glow-2 {
+  background-color: rgba(255,255,255,0.02);
+}
+html.light .hero-bg-glow-2 {
+  background-color: rgba(0,0,0,0.02);
 }

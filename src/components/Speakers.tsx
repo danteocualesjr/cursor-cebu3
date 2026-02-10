@@ -23,7 +23,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
 
       {/* Info */}
       <div className="p-4 sm:p-5">
-        <h3 className="text-base font-semibold text-white">{speaker.name}</h3>
+        <h3 className="text-base font-semibold text-text">{speaker.name}</h3>
         <p className="text-sm text-text-secondary mt-0.5">
           {speaker.role} at {speaker.company}
         </p>
@@ -41,7 +41,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 href={speaker.social.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-white transition-colors"
+                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-text transition-colors"
                 aria-label={`${speaker.name} on X`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -54,7 +54,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 href={speaker.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-white transition-colors"
+                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-text transition-colors"
                 aria-label={`${speaker.name} on LinkedIn`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -67,7 +67,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 href={speaker.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-white transition-colors"
+                className="p-2 -m-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-text-muted hover:text-text transition-colors"
                 aria-label={`${speaker.name} on GitHub`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -91,7 +91,7 @@ export default function Speakers() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
             Speakers
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -132,7 +132,7 @@ export default function Speakers() {
         <div className="text-center mt-6 sm:mt-8">
           <a
             href="#get-involved"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-white text-black font-medium rounded-full hover:bg-white/90 transition-all group active:bg-white/80"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-[#22c55e] text-black font-medium rounded-full hover:bg-[#4ade80] transition-all group active:bg-[#16a34a]"
           >
             Apply to be a Speaker
             <ArrowRight

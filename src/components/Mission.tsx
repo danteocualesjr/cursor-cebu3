@@ -33,7 +33,7 @@ export default function Mission() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4 sm:mb-6">
             Building Cebu&apos;s AI-first community
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -53,10 +53,10 @@ export default function Mission() {
                 key={pillar.title}
                 className="group p-5 sm:p-6 bg-bg-card rounded-2xl border border-border-light hover:border-border-hover hover:bg-bg-card-hover transition-all"
               >
-                <div className="w-10 h-10 bg-bg-elevated rounded-xl flex items-center justify-center mb-4 border border-border-light group-hover:bg-white group-hover:text-black transition-colors">
+                <div className="w-10 h-10 bg-bg-elevated rounded-xl flex items-center justify-center mb-4 border border-border-light group-hover:bg-[#22c55e] group-hover:text-black transition-colors">
                   <Icon size={20} />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-text mb-2">
                   {pillar.title}
                 </h3>
                 <p className="text-sm text-text-secondary leading-relaxed">
@@ -81,9 +81,9 @@ export default function Mission() {
             <img
               src="/cursor-logo.png"
               alt="Cursor logo"
-              className="w-8 h-8 invert"
+              className="w-8 h-8 logo-icon"
             />
-            <span className="text-2xl font-bold text-white group-hover:text-text-secondary transition-colors">
+            <span className="text-2xl font-bold text-text group-hover:text-text-secondary transition-colors">
               Cursor
             </span>
           </a>

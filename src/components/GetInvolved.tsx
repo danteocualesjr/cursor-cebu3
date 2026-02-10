@@ -33,7 +33,7 @@ export default function GetInvolved() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
             Get Involved
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -51,10 +51,10 @@ export default function GetInvolved() {
                 key={card.title}
                 className="group relative p-6 sm:p-8 bg-bg-card rounded-2xl border border-border-light hover:border-border-hover hover:bg-bg-card-hover transition-all"
               >
-                <div className="w-12 h-12 bg-bg-elevated rounded-xl flex items-center justify-center mb-6 border border-border-light group-hover:bg-white group-hover:text-black transition-colors">
+                <div className="w-12 h-12 bg-bg-elevated rounded-xl flex items-center justify-center mb-6 border border-border-light group-hover:bg-[#22c55e] group-hover:text-black transition-colors">
                   <Icon size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-text mb-3">
                   {card.title}
                 </h3>
                 <p className="text-sm text-text-secondary leading-relaxed mb-6">
@@ -62,7 +62,7 @@ export default function GetInvolved() {
                 </p>
                 <a
                   href={card.href}
-                  className="inline-flex items-center gap-2 py-2 text-sm font-medium text-white hover:text-accent-hover transition-colors group/link min-h-[44px]"
+                  className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent-hover transition-colors group/link min-h-[44px]"
                 >
                   {card.cta}
                   <ArrowRight
@@ -76,18 +76,18 @@ export default function GetInvolved() {
         </div>
 
         {/* Book Event Banner */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 bg-white rounded-2xl text-center">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-3 sm:mb-4">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 bg-bg-card rounded-2xl text-center border border-border-light">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-text mb-3 sm:mb-4">
             Want to host an event with us?
           </h3>
-          <p className="text-black/60 max-w-xl mx-auto mb-8 leading-relaxed">
+          <p className="text-text-secondary max-w-xl mx-auto mb-8 leading-relaxed">
             We&apos;re always open to co-organizing workshops, meetups,
             hackathons, and Cafe Cursor sessions. If you have a venue, an idea,
             or a team — let&apos;s make it happen.
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-black text-white font-medium rounded-full hover:bg-black/80 transition-colors group active:bg-black/70"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-[#22c55e] text-black font-medium rounded-full hover:bg-[#4ade80] transition-colors group active:bg-[#16a34a]"
           >
             Book an Event
             <ArrowRight

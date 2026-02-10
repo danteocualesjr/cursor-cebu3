@@ -39,8 +39,8 @@ function EventCard({ event }: { event: CommunityEvent }) {
           <span
             className={`px-3 py-1 text-xs font-medium rounded-full ${
               event.status === "upcoming"
-                ? "bg-white text-black"
-                : "bg-white/20 text-white backdrop-blur-sm"
+                ? "bg-[#22c55e] text-black"
+                : "bg-white/20 text-text backdrop-blur-sm"
             }`}
           >
             {event.status === "upcoming" ? "Upcoming" : "Past Event"}
@@ -50,7 +50,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
 
       {/* Content */}
       <div className="p-5 sm:p-6">
-        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-accent-hover transition-colors">
+        <h3 className="text-lg font-semibold text-text mb-2 group-hover:text-accent-hover transition-colors">
           {event.title}
         </h3>
         <p className="text-sm text-text-secondary leading-relaxed mb-4 line-clamp-2">
@@ -83,7 +83,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
         {event.status === "upcoming" && event.registrationUrl && (
           <a
             href={event.registrationUrl}
-            className="inline-flex items-center gap-2 py-2 text-sm font-medium text-white hover:text-accent-hover transition-colors group/link min-h-[44px]"
+            className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent-hover transition-colors group/link min-h-[44px]"
           >
             Register Now
             <ArrowRight
@@ -117,7 +117,7 @@ export default function Events() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
             Events
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -134,8 +134,8 @@ export default function Events() {
               onClick={() => setActiveFilter(filter.value)}
               className={`px-4 py-3 min-h-[44px] text-sm font-medium rounded-full transition-colors ${
                 activeFilter === filter.value
-                  ? "bg-white text-black"
-                  : "bg-bg-card text-text-secondary border border-border-light hover:text-white hover:border-border-hover"
+                  ? "bg-[#22c55e] text-black"
+                  : "bg-bg-card text-text-secondary border border-border-light hover:text-text hover:border-border-hover"
               }`}
             >
               {filter.label}
