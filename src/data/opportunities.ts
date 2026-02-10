@@ -63,28 +63,4 @@ export const opportunities: JobOpportunity[] = [
     applyUrl: "mailto:dante@nativestack.ai",
     postedAt: "2025-02-05",
   },
-  {
-    id: "startup-frontend-2025",
-    title: "Frontend Developer",
-    company: "Tech Startup Cebu",
-    description:
-      "Join an early-stage startup building developer tools. You'll work with React, TypeScript, and Cursor in a fast-paced, remote-first environment.",
-    type: "full-time",
-    workMode: "remote",
-    location: "Remote (Philippines)",
-    applyUrl: "#contact",
-    postedAt: "2025-02-08",
-  },
-  {
-    id: "intern-cursor-community-2025",
-    title: "Community Intern",
-    company: "Cursor Community Cebu",
-    description:
-      "Help organize events, engage with the community, and grow the Cursor Community Cebu. Great for students or recent grads who want to learn and connect.",
-    type: "internship",
-    workMode: "hybrid",
-    location: "Cebu City",
-    applyUrl: "#contact",
-    postedAt: "2025-02-10",
-  },
 ];
