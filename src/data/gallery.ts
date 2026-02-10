@@ -22,6 +22,13 @@ export const galleryImages: GalleryImage[] = [
     date: "2025",
   },
   {
+    id: "img-19",
+    src: "/gallery/event-19.png",
+    alt: "Two attendees at Cursor Cebu event",
+    event: "Cursor Cebu",
+    date: "2025",
+  },
+  {
     id: "img-3",
     src: "/gallery/event-03.png",
     alt: "Speaker presenting on user-centered design",
@@ -130,13 +137,6 @@ export const galleryImages: GalleryImage[] = [
     id: "img-18",
     src: "/gallery/event-18.png",
     alt: "Event in progress with presenter and audience",
-    event: "Cursor Cebu",
-    date: "2025",
-  },
-  {
-    id: "img-19",
-    src: "/gallery/event-19.png",
-    alt: "Two attendees at Cursor Cebu event",
     event: "Cursor Cebu",
     date: "2025",
   },

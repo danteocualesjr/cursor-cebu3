@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { X } from "lucide-react";
+import { X, ChevronDown, ChevronUp } from "lucide-react";
 import { galleryImages } from "@/data/gallery";
+
+const INITIAL_COUNT = 9;
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const displayedImages = isExpanded
+    ? galleryImages
+    : galleryImages.slice(0, INITIAL_COUNT);
+  const hasMore = galleryImages.length > INITIAL_COUNT;
 
   return (
     <section id="gallery" className="py-24 sm:py-32 bg-bg">
@@ -23,7 +31,7 @@ export default function Gallery() {
 
         {/* Masonry-style Grid */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {galleryImages.map((image, index) => (
+          {displayedImages.map((image, index) => (
             <div
               key={image.id}
               className={`break-inside-avoid group cursor-pointer relative rounded-2xl overflow-hidden border border-border-light hover:border-border-hover transition-all ${
@@ -47,6 +55,28 @@ export default function Gallery() {
             </div>
           ))}
         </div>
+
+        {/* View all / Show less */}
+        {hasMore && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border-light hover:border-border-hover hover:bg-bg-card-hover text-text-secondary hover:text-white transition-all font-medium"
+            >
+              {isExpanded ? (
+                <>
+                  Show less
+                  <ChevronUp size={18} />
+                </>
+              ) : (
+                <>
+                  View all {galleryImages.length} moments
+                  <ChevronDown size={18} />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Lightbox */}
