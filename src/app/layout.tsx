@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cursor Community Cebu — Where Cebu Builds with Cursor",
+  icons: {
+    icon: "/cursor-logo.png",
+  },
   description:
     "The official Cursor community in Cebu, Philippines. Join workshops, hackathons, meetups, and Cafe Cursor events. Learn, build, and collaborate with founders, developers, designers, and Cursor power users.",
   keywords: [
