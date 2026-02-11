@@ -28,15 +28,15 @@ export const WORK_MODE_LABELS: Record<WorkMode, string> = {
 
 export const opportunities: JobOpportunity[] = [
   {
-    id: "cursor-eng-2025",
-    title: "Software Engineer",
-    company: "Cursor",
+    id: "billing-support-associate-2025",
+    title: "Billing Support Associate",
+    company: "Cursor Philippines",
     description:
-      "Join Cursor and help build the future of AI-assisted development. We're looking for engineers passionate about developer tools and AI who want to shape how millions of developers write code.",
+      "Handle billing, payments, and subscriptions. Explain usage-based pricing clearly to customers via email and chat. Remote role.",
     type: "full-time",
     workMode: "remote",
-    location: "Remote",
-    applyUrl: "https://cursor.com/careers",
+    location: "Work from Home",
+    applyUrl: "https://ph.indeed.com/job/billing-support-associate-7625fd9668269188",
     postedAt: "2025-02-01",
   },
   {
