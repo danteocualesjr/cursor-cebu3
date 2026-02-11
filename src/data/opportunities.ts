@@ -36,7 +36,7 @@ export const opportunities: JobOpportunity[] = [
     type: "full-time",
     workMode: "remote",
     location: "Work from Home",
-    applyUrl: "",
+    applyUrl: "https://cursor.com/careers",
     postedAt: "2025-02-01",
   },
   {
