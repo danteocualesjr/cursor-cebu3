@@ -27,9 +27,21 @@ const workModeFilters: { label: string; value: WorkMode | "all" }[] = [
 ];
 
 function OpportunityCard({ job }: { job: JobOpportunity }) {
+  const CardWrapper = job.applyUrl ? "a" : "div";
+  const wrapperProps = job.applyUrl
+    ? {
+        href: job.applyUrl,
+        target: job.applyUrl.startsWith("http") ? "_blank" : undefined,
+        rel: job.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined,
+      }
+    : {};
+
   return (
-    <div className="group surface-card rounded-lg overflow-hidden">
-      <div className="p-5 sm:p-6">
+    <CardWrapper
+      className="group surface-card rounded-lg overflow-hidden block hover:ring-2 hover:ring-accent/20 transition-shadow"
+      {...wrapperProps}
+    >
+      <div className="p-5 sm:p-6 cursor-pointer">
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent/15 text-accent">
             {OPPORTUNITY_TYPE_LABELS[job.type]}
@@ -56,21 +68,16 @@ function OpportunityCard({ job }: { job: JobOpportunity }) {
         </div>
 
         {job.applyUrl && (
-          <a
-            href={job.applyUrl}
-            target={job.applyUrl.startsWith("http") ? "_blank" : undefined}
-            rel={job.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="btn-tertiary group/link"
-          >
+          <span className="btn-tertiary group/link inline-flex items-center gap-2">
             Apply Now
             <ArrowRight
               size={14}
               className="group-hover/link:translate-x-0.5 transition-transform"
             />
-          </a>
+          </span>
         )}
       </div>
-    </div>
+    </CardWrapper>
   );
 }
 
