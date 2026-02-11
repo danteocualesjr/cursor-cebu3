@@ -36,7 +36,7 @@ export const opportunities: JobOpportunity[] = [
     type: "full-time",
     workMode: "remote",
     location: "Work from Home",
-    applyUrl: "https://ph.indeed.com/job/billing-support-associate-7625fd9668269188",
+    applyUrl: "",
     postedAt: "2025-02-01",
   },
   {

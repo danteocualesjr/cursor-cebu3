@@ -55,18 +55,20 @@ function OpportunityCard({ job }: { job: JobOpportunity }) {
           <span>{job.location}</span>
         </div>
 
-        <a
-          href={job.applyUrl}
-          target={job.applyUrl.startsWith("http") ? "_blank" : undefined}
-          rel={job.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent transition-colors group/link min-h-[44px]"
-        >
-          Apply Now
-          <ArrowRight
-            size={14}
-            className="group-hover/link:translate-x-0.5 transition-transform"
-          />
-        </a>
+        {job.applyUrl && (
+          <a
+            href={job.applyUrl}
+            target={job.applyUrl.startsWith("http") ? "_blank" : undefined}
+            rel={job.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined}
+            className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent transition-colors group/link min-h-[44px]"
+          >
+            Apply Now
+            <ArrowRight
+              size={14}
+              className="group-hover/link:translate-x-0.5 transition-transform"
+            />
+          </a>
+        )}
       </div>
     </div>
   );
