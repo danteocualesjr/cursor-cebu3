@@ -53,7 +53,7 @@ export const speakers: Speaker[] = [
     id: "speaker-4",
     name: "Dante O. Cuales, Jr.",
     role: "Founder",
-    company: "Nativestack & Vibecademy",
+    company: "NativeStack AI",
     topic: "Building Products at Lightning Speed with Cursor",
     bio: "Community organizer and founder building at the intersection of AI and product development. Passionate about making Cursor accessible to everyone in Cebu.",
     image: "/speakers/dante-cuales.png",
