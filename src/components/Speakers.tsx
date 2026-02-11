@@ -5,13 +5,14 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
   return (
     <div className="group surface-card rounded-lg overflow-hidden">
       {/* Photo */}
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-square overflow-hidden [transform:translateZ(0)]">
         <img
           src={speaker.image}
           alt={speaker.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="block w-full h-full object-cover origin-center scale-[1.01] group-hover:scale-[1.06] transition-transform duration-500 will-change-transform transform-gpu [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 top-0 bg-gradient-to-t from-bg-card/95 via-transparent to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-bg-card" />
         {speaker.status === "upcoming" && (
           <div className="absolute top-3 right-3">
             <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent text-black">
