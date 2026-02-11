@@ -34,7 +34,7 @@ function OpportunityCard({ job }: { job: JobOpportunity }) {
           <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent/15 text-accent">
             {OPPORTUNITY_TYPE_LABELS[job.type]}
           </span>
-          <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-white/5 text-text-secondary">
+          <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-black/5 text-text-secondary">
             {WORK_MODE_LABELS[job.workMode]}
           </span>
         </div>
@@ -108,7 +108,7 @@ export default function Opportunities() {
                 onClick={() => setTypeFilter(filter.value)}
                 className={`px-4 py-2.5 min-h-[44px] text-sm font-medium rounded-md transition-all ${
                   typeFilter === filter.value
-                    ? "bg-accent text-black shadow-lg shadow-accent/20"
+                    ? "bg-accent text-white shadow-lg shadow-accent/20"
                     : "bg-bg-card text-text-secondary border border-border-light hover:text-text hover:border-border-hover"
                 }`}
               >
@@ -124,7 +124,7 @@ export default function Opportunities() {
                 onClick={() => setWorkModeFilter(filter.value)}
                 className={`px-4 py-2.5 min-h-[44px] text-sm font-medium rounded-md transition-all ${
                   workModeFilter === filter.value
-                    ? "bg-accent text-black shadow-lg shadow-accent/20"
+                    ? "bg-accent text-white shadow-lg shadow-accent/20"
                     : "bg-bg-card text-text-secondary border border-border-light hover:text-text hover:border-border-hover"
                 }`}
               >
