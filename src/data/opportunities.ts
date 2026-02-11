@@ -60,7 +60,7 @@ export const opportunities: JobOpportunity[] = [
     type: "full-time",
     workMode: "hybrid",
     location: "Cebu City",
-    applyUrl: "mailto:dante@nativestack.ai",
+    applyUrl: "https://cursor.com/careers",
     postedAt: "2025-02-05",
   },
 ];
