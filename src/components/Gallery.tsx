@@ -21,7 +21,7 @@ export default function Gallery() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <p className="mono-accent mb-4">Gallery</p>
+          <p className="section-kicker mb-4">Gallery</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Moments from Our Events
           </h2>

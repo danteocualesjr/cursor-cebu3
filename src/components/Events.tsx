@@ -21,7 +21,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
   const badgeClass = `badge-${event.type}`;
 
   return (
-    <div className="group bg-bg-card rounded-lg border border-border-light overflow-hidden hover:border-accent/30 transition-all">
+    <div className="group surface-card rounded-lg overflow-hidden">
       {/* Image */}
       <div className="relative h-40 sm:h-48 overflow-hidden">
         <img
@@ -40,7 +40,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
             className={`px-2.5 py-1 text-xs font-medium rounded-md ${
               event.status === "upcoming"
                 ? "bg-accent text-black"
-                : "bg-white/10 text-text backdrop-blur-sm"
+                : "bg-black/30 text-text-secondary border border-border-light/80 backdrop-blur-sm"
             }`}
           >
             {event.status === "upcoming" ? "Upcoming" : "Past"}
@@ -118,7 +118,7 @@ export default function Events() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <p className="mono-accent mb-4">What&apos;s Happening</p>
+          <p className="section-kicker mb-4">What&apos;s Happening</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Events
           </h2>

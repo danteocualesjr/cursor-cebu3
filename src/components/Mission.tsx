@@ -34,7 +34,7 @@ export default function Mission() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <p className="mono-accent mb-4">About Us</p>
+          <p className="section-kicker mb-4">About Us</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4 sm:mb-6">
             Building Cebu&apos;s AI-first community
           </h2>
@@ -53,7 +53,7 @@ export default function Mission() {
             return (
               <div
                 key={pillar.title}
-                className="group relative p-5 sm:p-6 bg-bg-card rounded-lg border border-border-light hover:border-accent/30 hover:bg-bg-card-hover transition-all"
+                className="group relative p-5 sm:p-6 surface-card rounded-lg"
               >
                 <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-border-light to-transparent group-hover:via-accent/30 transition-colors" />
                 <div className="flex items-center gap-3 mb-4">
@@ -74,10 +74,10 @@ export default function Mission() {
         </div>
 
         {/* Cursor Support Callout */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-bg-elevated rounded-lg border border-border-light text-center relative overflow-hidden">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 surface-card rounded-lg text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent" />
           <div className="relative z-10">
-            <p className="mono-accent mb-4">
+            <p className="section-kicker mb-4">
               Officially Supported By
             </p>
             <a

@@ -34,7 +34,7 @@ export default function GetInvolved() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <p className="mono-accent mb-4">Join Us</p>
+          <p className="section-kicker mb-4">Join Us</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Get Involved
           </h2>
@@ -51,7 +51,7 @@ export default function GetInvolved() {
             return (
               <div
                 key={card.title}
-                className="group relative p-6 sm:p-8 bg-bg-card rounded-lg border border-border-light hover:border-accent/30 transition-all"
+                className="group relative p-6 sm:p-8 surface-card rounded-lg"
               >
                 <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-border-light to-transparent group-hover:via-accent/30 transition-colors" />
                 <div className="flex items-center gap-3 mb-5">
@@ -82,7 +82,7 @@ export default function GetInvolved() {
         </div>
 
         {/* Book Event Banner */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 bg-bg-elevated rounded-lg text-center border border-border-light relative overflow-hidden">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 surface-card rounded-lg text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent" />
           <div className="relative z-10">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-text tight-heading mb-3 sm:mb-4">

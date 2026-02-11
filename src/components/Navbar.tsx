@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border-light">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/75 backdrop-blur-xl border-b border-border-light shadow-[0_8px_30px_rgba(0,0,0,0.28)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 min-h-[56px]">
           {/* Logo */}
@@ -29,7 +29,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm text-text-secondary hover:text-text transition-colors rounded-lg hover:bg-bg-card"
+                className="px-3 py-2 text-sm text-text-secondary hover:text-text transition-colors rounded-md hover:bg-bg-card/80"
               >
                 {link.label}
               </a>
@@ -37,7 +37,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
             <a
               href={SOCIAL_LINKS.cursor}
               target="_blank"
@@ -49,7 +49,7 @@ export default function Navbar() {
             </a>
             <a
               href="#get-involved"
-              className="px-4 py-2 bg-accent text-black text-sm font-semibold rounded-md hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all"
+              className="px-4 py-2 bg-accent text-black text-sm font-semibold rounded-md hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all active:scale-[0.99]"
             >
               Join the Community
             </a>

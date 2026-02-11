@@ -3,7 +3,7 @@ import { speakers, type Speaker } from "@/data/speakers";
 
 function SpeakerCard({ speaker }: { speaker: Speaker }) {
   return (
-    <div className="group bg-bg-card rounded-lg border border-border-light overflow-hidden hover:border-accent/30 transition-all">
+    <div className="group surface-card rounded-lg overflow-hidden">
       {/* Photo */}
       <div className="relative aspect-square overflow-hidden">
         <img
@@ -92,7 +92,7 @@ export default function Speakers() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <p className="mono-accent mb-4">Community</p>
+          <p className="section-kicker mb-4">Community</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Speakers
           </h2>

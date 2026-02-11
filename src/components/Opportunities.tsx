@@ -28,7 +28,7 @@ const workModeFilters: { label: string; value: WorkMode | "all" }[] = [
 
 function OpportunityCard({ job }: { job: JobOpportunity }) {
   return (
-    <div className="group bg-bg-card rounded-lg border border-border-light overflow-hidden hover:border-accent/30 transition-all">
+    <div className="group surface-card rounded-lg overflow-hidden">
       <div className="p-5 sm:p-6">
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent/15 text-accent">
@@ -90,7 +90,7 @@ export default function Opportunities() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <p className="mono-accent mb-4">Job Board</p>
+          <p className="section-kicker mb-4">Job Board</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Opportunities
           </h2>
@@ -154,7 +154,7 @@ export default function Opportunities() {
         )}
 
         {/* Post a Job CTA */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-bg-card rounded-lg text-center border border-border-light relative overflow-hidden">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 surface-card rounded-lg text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent" />
           <div className="relative z-10">
             <h3 className="text-xl font-semibold text-text mb-2">

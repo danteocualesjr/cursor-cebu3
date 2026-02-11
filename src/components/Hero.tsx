@@ -10,7 +10,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-12 sm:pt-24 sm:pb-16">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 bg-bg-card/80 backdrop-blur-sm border border-border-light rounded-lg mb-6 sm:mb-8 animate-fade-in-up">
+        <div className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 surface-card rounded-md mb-6 sm:mb-8 animate-fade-in-up">
           <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
           <span className="text-xs sm:text-sm text-text-secondary font-medium tracking-wide">
             Officially supported by Cursor
@@ -35,7 +35,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-in-up">
           <a
             href="#events"
-            className="group flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-lg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all active:bg-accent-dim"
+            className="group flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-md hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all active:bg-accent-dim"
           >
             Explore Events
             <ArrowRight
@@ -45,7 +45,7 @@ export default function Hero() {
           </a>
           <a
             href="#get-involved"
-            className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-bg-card/80 backdrop-blur-sm border border-border-light text-text font-medium rounded-lg hover:bg-bg-card hover:border-border-hover transition-colors active:bg-bg-elevated"
+            className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] surface-card text-text font-medium rounded-md hover:bg-bg-card-hover transition-colors active:bg-bg-elevated"
           >
             Apply to Speak
           </a>

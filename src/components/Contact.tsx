@@ -38,7 +38,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Left: Info */}
           <div>
-            <p className="mono-accent mb-4">Contact</p>
+            <p className="section-kicker mb-4">Contact</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
               Get in Touch
             </h2>
