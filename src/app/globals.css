@@ -78,22 +78,22 @@ img, video, iframe {
   }
 }
 
-/* Event type badges - YC dark mode palette */
+/* Event type badges - monochrome neutral */
 .badge-workshop {
-  background-color: rgba(249, 115, 22, 0.15);
-  color: #fb923c;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
 }
 .badge-cafe {
-  background-color: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
 }
 .badge-hackathon {
-  background-color: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
 }
 .badge-meetup {
-  background-color: rgba(168, 85, 247, 0.15);
-  color: #c084fc;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
 }
 
 /* Smooth fade-in animation */
