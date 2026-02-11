@@ -29,11 +29,13 @@ const cards = [
 
 export default function GetInvolved() {
   return (
-    <section id="get-involved" className="py-16 sm:py-24 lg:py-32 bg-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="get-involved" className="relative py-16 sm:py-24 lg:py-32 bg-bg overflow-hidden">
+      <div className="absolute inset-0 dot-grid opacity-50" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
+          <p className="mono-accent mb-4">Join Us</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Get Involved
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -43,16 +45,20 @@ export default function GetInvolved() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 stagger-children">
-          {cards.map((card) => {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 stagger-children">
+          {cards.map((card, index) => {
             const Icon = card.icon;
             return (
               <div
                 key={card.title}
-                className="group relative p-6 sm:p-8 bg-bg-card rounded-2xl border border-border-light hover:border-border-hover hover:bg-bg-card-hover transition-all"
+                className="group relative p-6 sm:p-8 bg-bg-card rounded-lg border border-border-light hover:border-accent/30 transition-all"
               >
-                <div className="w-12 h-12 bg-bg-elevated rounded-xl flex items-center justify-center mb-6 border border-border-light group-hover:bg-[#22c55e] group-hover:text-black transition-colors">
-                  <Icon size={24} />
+                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-border-light to-transparent group-hover:via-accent/30 transition-colors" />
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 bg-bg-elevated rounded-md flex items-center justify-center border border-border-light group-hover:border-accent/50 group-hover:text-accent transition-colors">
+                    <Icon size={22} />
+                  </div>
+                  <span className="text-xs text-text-faint font-mono">0{index + 1}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-text mb-3">
                   {card.title}
@@ -62,7 +68,7 @@ export default function GetInvolved() {
                 </p>
                 <a
                   href={card.href}
-                  className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent-hover transition-colors group/link min-h-[44px]"
+                  className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent transition-colors group/link min-h-[44px]"
                 >
                   {card.cta}
                   <ArrowRight
@@ -76,25 +82,28 @@ export default function GetInvolved() {
         </div>
 
         {/* Book Event Banner */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 bg-bg-card rounded-2xl text-center border border-border-light">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-text mb-3 sm:mb-4">
-            Want to host an event with us?
-          </h3>
-          <p className="text-text-secondary max-w-xl mx-auto mb-8 leading-relaxed">
-            We&apos;re always open to co-organizing workshops, meetups,
-            hackathons, and Cafe Cursor sessions. If you have a venue, an idea,
-            or a team — let&apos;s make it happen.
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-[#22c55e] text-black font-medium rounded-full hover:bg-[#4ade80] transition-colors group active:bg-[#16a34a]"
-          >
-            Book an Event
-            <ArrowRight
-              size={16}
-              className="group-hover:translate-x-0.5 transition-transform"
-            />
-          </a>
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 lg:p-12 bg-bg-elevated rounded-lg text-center border border-border-light relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent" />
+          <div className="relative z-10">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-text tight-heading mb-3 sm:mb-4">
+              Want to host an event with us?
+            </h3>
+            <p className="text-text-secondary max-w-xl mx-auto mb-8 leading-relaxed">
+              We&apos;re always open to co-organizing workshops, meetups,
+              hackathons, and Cafe Cursor sessions. If you have a venue, an idea,
+              or a team — let&apos;s make it happen.
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-lg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all group active:bg-accent-dim"
+            >
+              Book an Event
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-0.5 transition-transform"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </section>

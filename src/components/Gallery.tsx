@@ -16,11 +16,13 @@ export default function Gallery() {
   const hasMore = galleryImages.length > INITIAL_COUNT;
 
   return (
-    <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="relative py-16 sm:py-24 lg:py-32 bg-bg-elevated overflow-hidden">
+      <div className="absolute inset-0 grid-lines opacity-30" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
+          <p className="mono-accent mb-4">Gallery</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Moments from Our Events
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -34,7 +36,7 @@ export default function Gallery() {
           {displayedImages.map((image, index) => (
             <div
               key={image.id}
-              className={`break-inside-avoid group cursor-pointer relative rounded-xl sm:rounded-2xl overflow-hidden border border-border-light hover:border-border-hover transition-all touch-manipulation ${
+              className={`break-inside-avoid group cursor-pointer relative rounded-lg overflow-hidden border border-border-light hover:border-accent/30 transition-all touch-manipulation ${
                 index % 3 === 0 ? "aspect-[4/5]" : index % 3 === 1 ? "aspect-[4/3]" : "aspect-square"
               }`}
               onClick={() => setSelectedImage(image.src)}
@@ -62,7 +64,7 @@ export default function Gallery() {
           <div className="mt-8 sm:mt-10 text-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 sm:py-3 min-h-[48px] rounded-full border border-border-light hover:border-border-hover hover:bg-bg-card-hover text-text-secondary hover:text-text transition-all font-medium active:bg-bg-card-hover"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[48px] rounded-lg border border-border-light hover:border-accent/30 hover:bg-bg-card-hover text-text-secondary hover:text-text transition-all font-medium active:bg-bg-card-hover"
             >
               {isExpanded ? (
                 <>

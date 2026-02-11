@@ -32,12 +32,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-bg-elevated">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 bg-bg overflow-hidden">
+      <div className="absolute inset-0 dot-grid opacity-50" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Left: Info */}
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
+            <p className="mono-accent mb-4">Contact</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
               Get in Touch
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-6 sm:mb-8">
@@ -48,14 +50,14 @@ export default function Contact() {
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-bg-card rounded-xl flex items-center justify-center shrink-0 border border-border-light">
+                <div className="w-10 h-10 bg-bg-card rounded-md flex items-center justify-center shrink-0 border border-border-light">
                   <Mail size={18} className="text-text-muted" />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-text">Email</h3>
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-sm text-text-secondary hover:text-text transition-colors"
+                    className="text-sm text-text-secondary hover:text-accent transition-colors"
                   >
                     {CONTACT_EMAIL}
                   </a>
@@ -64,19 +66,19 @@ export default function Contact() {
 
               {/* Social */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-bg-card rounded-xl flex items-center justify-center shrink-0 border border-border-light">
+                <div className="w-10 h-10 bg-bg-card rounded-md flex items-center justify-center shrink-0 border border-border-light">
                   <MessageCircle size={18} className="text-text-muted" />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-text mb-2">
                     Connect With Us
                   </h3>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2">
                   <a
                     href={SOCIAL_LINKS.discord}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-text hover:border-border-hover transition-colors"
+                    className="px-4 py-2.5 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-md text-sm text-text-secondary hover:text-text hover:border-accent/30 transition-all"
                   >
                     Discord
                   </a>
@@ -84,15 +86,15 @@ export default function Contact() {
                     href={SOCIAL_LINKS.x}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-text hover:border-border-hover transition-colors"
+                    className="px-4 py-2.5 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-md text-sm text-text-secondary hover:text-text hover:border-accent/30 transition-all"
                   >
-                    X (Twitter)
+                    X
                   </a>
                   <a
                     href={SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-lg text-sm text-text-secondary hover:text-text hover:border-border-hover transition-colors"
+                    className="px-4 py-2.5 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-md text-sm text-text-secondary hover:text-text hover:border-accent/30 transition-all"
                   >
                     LinkedIn
                   </a>
@@ -121,7 +123,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-xl text-base text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-lg text-base text-text placeholder:text-text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -142,7 +144,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-xl text-base text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-lg text-base text-text placeholder:text-text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
@@ -161,7 +163,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
                   }
-                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-xl text-base text-text focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors appearance-none"
+                  className="w-full px-4 py-3.5 min-h-[48px] bg-bg-card border border-border-light rounded-lg text-base text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors appearance-none"
                 >
                   {subjects.map((s) => (
                     <option key={s} value={s}>
@@ -187,7 +189,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-3.5 min-h-[120px] bg-bg-card border border-border-light rounded-xl text-base text-text placeholder:text-text-muted focus:outline-none focus:border-border-hover focus:ring-1 focus:ring-border-hover transition-colors resize-none"
+                  className="w-full px-4 py-3.5 min-h-[120px] bg-bg-card border border-border-light rounded-lg text-base text-text placeholder:text-text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors resize-none"
                   placeholder="Tell us what's on your mind..."
                 />
               </div>
@@ -195,7 +197,7 @@ export default function Contact() {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-[#22c55e] text-black font-medium rounded-full hover:bg-[#4ade80] transition-colors active:bg-[#16a34a]"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-lg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all active:bg-accent-dim"
               >
                 Send Message
                 <Send size={16} />

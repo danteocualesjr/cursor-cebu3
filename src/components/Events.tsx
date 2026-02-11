@@ -21,7 +21,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
   const badgeClass = `badge-${event.type}`;
 
   return (
-    <div className="group bg-bg-card rounded-2xl border border-border-light overflow-hidden hover:border-border-hover hover:bg-bg-card-hover transition-all">
+    <div className="group bg-bg-card rounded-lg border border-border-light overflow-hidden hover:border-accent/30 transition-all">
       {/* Image */}
       <div className="relative h-40 sm:h-48 overflow-hidden">
         <img
@@ -29,21 +29,21 @@ function EventCard({ event }: { event: CommunityEvent }) {
           alt={event.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent" />
         <div className="absolute top-3 left-3 flex gap-2">
           <span
-            className={`px-3 py-1 text-xs font-medium rounded-full ${badgeClass}`}
+            className={`px-2.5 py-1 text-xs font-medium rounded-md ${badgeClass}`}
           >
             {EVENT_TYPE_LABELS[event.type]}
           </span>
           <span
-            className={`px-3 py-1 text-xs font-medium rounded-full ${
+            className={`px-2.5 py-1 text-xs font-medium rounded-md ${
               event.status === "upcoming"
-                ? "bg-[#22c55e] text-black"
-                : "bg-white/20 text-text backdrop-blur-sm"
+                ? "bg-accent text-black"
+                : "bg-white/10 text-text backdrop-blur-sm"
             }`}
           >
-            {event.status === "upcoming" ? "Upcoming" : "Past Event"}
+            {event.status === "upcoming" ? "Upcoming" : "Past"}
           </span>
         </div>
       </div>
@@ -113,11 +113,13 @@ export default function Events() {
   });
 
   return (
-    <section id="events" className="py-16 sm:py-24 lg:py-32 bg-bg-elevated">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="events" className="relative py-16 sm:py-24 lg:py-32 bg-bg-elevated overflow-hidden">
+      <div className="absolute inset-0 grid-lines opacity-30" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
+          <p className="mono-accent mb-4">What&apos;s Happening</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Events
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -132,9 +134,9 @@ export default function Events() {
             <button
               key={filter.value}
               onClick={() => setActiveFilter(filter.value)}
-              className={`px-4 py-3 min-h-[44px] text-sm font-medium rounded-full transition-colors ${
+              className={`px-4 py-2.5 min-h-[44px] text-sm font-medium rounded-md transition-all ${
                 activeFilter === filter.value
-                  ? "bg-[#22c55e] text-black"
+                  ? "bg-accent text-black shadow-lg shadow-accent/20"
                   : "bg-bg-card text-text-secondary border border-border-light hover:text-text hover:border-border-hover"
               }`}
             >

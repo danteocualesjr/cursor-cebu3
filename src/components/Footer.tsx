@@ -3,8 +3,9 @@ import { SITE_NAME, SOCIAL_LINKS, NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-bg border-t border-border-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <footer className="relative bg-bg border-t border-border-light overflow-hidden">
+      <div className="absolute inset-0 dot-grid opacity-30" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
@@ -34,7 +35,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-text mb-4">
+            <h3 className="text-xs font-mono text-text-muted uppercase tracking-wider mb-4">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -53,7 +54,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="text-sm font-semibold text-text mb-4">Connect</h3>
+            <h3 className="text-xs font-mono text-text-muted uppercase tracking-wider mb-4">Connect</h3>
             <ul className="space-y-2.5">
               <li>
                 <a
@@ -102,17 +103,16 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-border-light flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <p className="text-sm text-text-muted">
-            &copy; {new Date().getFullYear()} Cursor Community Cebu. All rights
-            reserved.
+          <p className="text-xs text-text-muted font-mono">
+            &copy; {new Date().getFullYear()} Cursor Community Cebu
           </p>
-          <p className="text-sm text-text-muted">
+          <p className="text-xs text-text-muted font-mono">
             Built with{" "}
             <a
               href={SOCIAL_LINKS.cursor}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-text transition-colors"
+              className="text-text-secondary hover:text-accent transition-colors"
             >
               Cursor
             </a>

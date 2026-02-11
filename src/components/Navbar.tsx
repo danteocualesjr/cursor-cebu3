@@ -49,7 +49,7 @@ export default function Navbar() {
             </a>
             <a
               href="#get-involved"
-              className="px-4 py-2 bg-[#22c55e] text-black text-sm font-medium rounded-full hover:bg-[#4ade80] transition-colors"
+              className="px-4 py-2 bg-accent text-black text-sm font-semibold rounded-md hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all"
             >
               Join the Community
             </a>
@@ -94,7 +94,7 @@ export default function Navbar() {
               <a
                 href="#get-involved"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center min-h-[48px] px-4 py-3.5 bg-[#22c55e] text-black text-base font-medium rounded-full hover:bg-[#4ade80] transition-colors active:bg-[#16a34a]"
+                className="flex items-center justify-center min-h-[48px] px-4 py-3.5 bg-accent text-black text-base font-semibold rounded-lg hover:bg-accent-hover transition-colors active:bg-accent-dim"
               >
                 Join the Community
               </a>

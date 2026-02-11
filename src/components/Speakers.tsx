@@ -3,7 +3,7 @@ import { speakers, type Speaker } from "@/data/speakers";
 
 function SpeakerCard({ speaker }: { speaker: Speaker }) {
   return (
-    <div className="group bg-bg-card rounded-2xl border border-border-light overflow-hidden hover:border-border-hover hover:bg-bg-card-hover transition-all">
+    <div className="group bg-bg-card rounded-lg border border-border-light overflow-hidden hover:border-accent/30 transition-all">
       {/* Photo */}
       <div className="relative aspect-square overflow-hidden">
         <img
@@ -11,10 +11,10 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
           alt={speaker.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent" />
         {speaker.status === "upcoming" && (
           <div className="absolute top-3 right-3">
-            <span className="px-3 py-1 text-xs font-medium rounded-full bg-white text-black">
+            <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent text-black">
               Upcoming
             </span>
           </div>
@@ -87,11 +87,13 @@ export default function Speakers() {
   const upcomingSpeakers = speakers.filter((s) => s.status === "upcoming");
 
   return (
-    <section id="speakers" className="py-16 sm:py-24 lg:py-32 bg-bg-elevated">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="speakers" className="relative py-16 sm:py-24 lg:py-32 bg-bg overflow-hidden">
+      <div className="absolute inset-0 dot-grid opacity-50" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tracking-tight mb-4">
+          <p className="mono-accent mb-4">Community</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
             Speakers
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
@@ -103,7 +105,7 @@ export default function Speakers() {
         {/* Past Speakers */}
         {pastSpeakers.length > 0 && (
           <div className="mb-12 sm:mb-16">
-            <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider mb-4 sm:mb-6">
+            <h3 className="text-xs font-mono text-text-muted uppercase tracking-wider mb-4 sm:mb-6">
               Past Speakers
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -117,10 +119,10 @@ export default function Speakers() {
         {/* Upcoming Speakers */}
         {upcomingSpeakers.length > 0 && (
           <div className="mb-10 sm:mb-12">
-            <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider mb-4 sm:mb-6">
+            <h3 className="text-xs font-mono text-text-muted uppercase tracking-wider mb-4 sm:mb-6">
               Upcoming Speakers
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
               {upcomingSpeakers.map((speaker) => (
                 <SpeakerCard key={speaker.id} speaker={speaker} />
               ))}
@@ -132,7 +134,7 @@ export default function Speakers() {
         <div className="text-center mt-6 sm:mt-8">
           <a
             href="#get-involved"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-[#22c55e] text-black font-medium rounded-full hover:bg-[#4ade80] transition-all group active:bg-[#16a34a]"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-lg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all group active:bg-accent-dim"
           >
             Apply to be a Speaker
             <ArrowRight

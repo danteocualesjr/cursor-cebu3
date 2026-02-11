@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #0A0A0A;
-  --color-bg-elevated: #111111;
-  --color-bg-card: #161616;
-  --color-bg-card-hover: #1c1c1c;
-  --color-bg-subtle: #0f0f0f;
-  --color-text: #EDEDED;
-  --color-text-secondary: #A0A0A0;
-  --color-text-muted: #666666;
-  --color-text-faint: #444444;
-  --color-border: #222222;
-  --color-border-light: #1a1a1a;
-  --color-border-hover: #333333;
+  --color-bg: #050505;
+  --color-bg-elevated: #0a0a0a;
+  --color-bg-card: #0f0f0f;
+  --color-bg-card-hover: #141414;
+  --color-bg-subtle: #080808;
+  --color-text: #f0f0f0;
+  --color-text-secondary: #8a8a8a;
+  --color-text-muted: #525252;
+  --color-text-faint: #333333;
+  --color-border: #1a1a1a;
+  --color-border-light: #141414;
+  --color-border-hover: #2a2a2a;
   --color-accent: #22c55e;
   --color-accent-hover: #4ade80;
+  --color-accent-dim: #16a34a;
   --color-white: #ffffff;
   --color-black: #000000;
   --font-sans: var(--font-geist-sans);
@@ -31,6 +32,37 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+}
+
+/* Selection colors */
+::selection {
+  background-color: rgba(34, 197, 94, 0.3);
+  color: var(--color-text);
+}
+
+/* Dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle noise texture overlay */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Grid lines pattern (alternative) */
+.grid-lines {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 /* Prevent horizontal overflow on mobile */
@@ -114,7 +146,7 @@ img, video, iframe {
 
 /* Gradient text helper */
 .gradient-text {
-  background: linear-gradient(to bottom, #FFFFFF, #22c55e, #666666);
+  background: linear-gradient(180deg, #ffffff 0%, #22c55e 50%, #0a0a0a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -125,10 +157,58 @@ img, video, iframe {
   filter: invert(1);
 }
 
-/* Hero background glow */
+/* Hero background glow - green tinted */
 .hero-bg-glow {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.04), transparent);
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
 }
 .hero-bg-glow-2 {
-  background-color: rgba(255,255,255,0.02);
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.04) 0%, transparent 60%);
+}
+
+/* Accent glow on hover */
+.glow-accent {
+  box-shadow: 0 0 40px rgba(34, 197, 94, 0.1);
+}
+
+/* Monospace accent text */
+.mono-accent {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Tighter headline tracking */
+.tight-heading {
+  letter-spacing: -0.03em;
+}
+
+/* Card with top accent border */
+.card-accent-top {
+  position: relative;
+}
+.card-accent-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), transparent);
+}
+
+/* Subtle scan line effect */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
 }
