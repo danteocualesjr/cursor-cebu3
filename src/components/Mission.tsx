@@ -33,12 +33,12 @@ export default function Mission() {
       <div className="absolute inset-0 dot-grid opacity-50" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        <div className="section-head">
           <p className="section-kicker mb-4">About Us</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4 sm:mb-6">
+          <h2 className="section-title mb-5">
             Building Cebu&apos;s AI-first community
           </h2>
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+          <p className="section-description">
             Cursor Community Cebu brings together the city&apos;s most ambitious
             builders — founders, developers, designers, product managers, and
             Cursor power users — to foster learning, spark collaboration, and

@@ -83,7 +83,7 @@ function EventCard({ event }: { event: CommunityEvent }) {
         {event.status === "upcoming" && event.registrationUrl && (
           <a
             href={event.registrationUrl}
-            className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent-hover transition-colors group/link min-h-[44px]"
+            className="btn-tertiary group/link"
           >
             Register Now
             <ArrowRight
@@ -117,12 +117,12 @@ export default function Events() {
       <div className="absolute inset-0 grid-lines opacity-30" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+        <div className="section-head">
           <p className="section-kicker mb-4">What&apos;s Happening</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
+          <h2 className="section-title mb-4">
             Events
           </h2>
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+          <p className="section-description">
             From casual coffee-and-code sessions to intense hackathons — there&apos;s
             always something happening in the Cursor Community Cebu.
           </p>
@@ -134,10 +134,10 @@ export default function Events() {
             <button
               key={filter.value}
               onClick={() => setActiveFilter(filter.value)}
-              className={`px-4 py-2.5 min-h-[44px] text-sm font-medium rounded-md transition-all ${
+              className={`chip-filter ${
                 activeFilter === filter.value
-                  ? "bg-accent text-black shadow-lg shadow-accent/20"
-                  : "bg-bg-card text-text-secondary border border-border-light hover:text-text hover:border-border-hover"
+                  ? "chip-filter is-active"
+                  : ""
               }`}
             >
               {filter.label}

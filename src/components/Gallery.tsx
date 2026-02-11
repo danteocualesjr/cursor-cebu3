@@ -20,12 +20,12 @@ export default function Gallery() {
       <div className="absolute inset-0 grid-lines opacity-30" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+        <div className="section-head">
           <p className="section-kicker mb-4">Gallery</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
+          <h2 className="section-title mb-4">
             Moments from Our Events
           </h2>
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+          <p className="section-description">
             A glimpse into the energy, collaboration, and creativity that
             defines our community gatherings.
           </p>

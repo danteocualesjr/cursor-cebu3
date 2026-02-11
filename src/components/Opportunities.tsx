@@ -60,7 +60,7 @@ function OpportunityCard({ job }: { job: JobOpportunity }) {
             href={job.applyUrl}
             target={job.applyUrl.startsWith("http") ? "_blank" : undefined}
             rel={job.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent transition-colors group/link min-h-[44px]"
+            className="btn-tertiary group/link"
           >
             Apply Now
             <ArrowRight
@@ -89,12 +89,12 @@ export default function Opportunities() {
       <div className="absolute inset-0 grid-lines opacity-30" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+        <div className="section-head">
           <p className="section-kicker mb-4">Job Board</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
+          <h2 className="section-title mb-4">
             Opportunities
           </h2>
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+          <p className="section-description">
             Job openings from Cursor and partner companies. Find your next role
             in the Cebu tech community — remote, hybrid, or on-site.
           </p>
@@ -108,10 +108,10 @@ export default function Opportunities() {
               <button
                 key={filter.value}
                 onClick={() => setTypeFilter(filter.value)}
-                className={`px-4 py-2.5 min-h-[44px] text-sm font-medium rounded-md transition-all ${
+                className={`chip-filter ${
                   typeFilter === filter.value
-                    ? "bg-accent text-white shadow-lg shadow-accent/20"
-                    : "bg-bg-card text-text-secondary border border-border-light hover:text-text hover:border-border-hover"
+                    ? "chip-filter is-active"
+                    : ""
                 }`}
               >
                 {filter.label}
@@ -124,10 +124,10 @@ export default function Opportunities() {
               <button
                 key={filter.value}
                 onClick={() => setWorkModeFilter(filter.value)}
-                className={`px-4 py-2.5 min-h-[44px] text-sm font-medium rounded-md transition-all ${
+                className={`chip-filter ${
                   workModeFilter === filter.value
-                    ? "bg-accent text-white shadow-lg shadow-accent/20"
-                    : "bg-bg-card text-text-secondary border border-border-light hover:text-text hover:border-border-hover"
+                    ? "chip-filter is-active"
+                    : ""
                 }`}
               >
                 {filter.label}
@@ -166,7 +166,7 @@ export default function Opportunities() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[48px] bg-bg-elevated text-text font-medium rounded-lg border border-border-light hover:border-accent/30 hover:bg-bg-card-hover transition-all"
+              className="btn-secondary"
             >
               Get in Touch
               <ArrowRight size={16} />

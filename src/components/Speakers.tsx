@@ -91,12 +91,12 @@ export default function Speakers() {
       <div className="absolute inset-0 dot-grid opacity-50" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        <div className="section-head">
           <p className="section-kicker mb-4">Community</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
+          <h2 className="section-title mb-4">
             Speakers
           </h2>
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+          <p className="section-description">
             Learn from builders, founders, and power users who are pushing the
             boundaries of what&apos;s possible with Cursor.
           </p>
@@ -134,7 +134,7 @@ export default function Speakers() {
         <div className="text-center mt-6 sm:mt-8">
           <a
             href="#get-involved"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-lg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all group active:bg-accent-dim"
+            className="btn-primary group"
           >
             Apply to be a Speaker
             <ArrowRight

@@ -39,10 +39,10 @@ export default function Contact() {
           {/* Left: Info */}
           <div>
             <p className="section-kicker mb-4">Contact</p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
+            <h2 className="section-title mb-4">
               Get in Touch
             </h2>
-            <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-6 sm:mb-8">
+            <p className="section-description mb-6 sm:mb-8">
               Have a question, idea, or proposal? We&apos;d love to hear from
               you. Reach out and we&apos;ll get back to you as soon as we can.
             </p>
@@ -197,7 +197,7 @@ export default function Contact() {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-lg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all active:bg-accent-dim"
+                className="w-full btn-primary"
               >
                 Send Message
                 <Send size={16} />

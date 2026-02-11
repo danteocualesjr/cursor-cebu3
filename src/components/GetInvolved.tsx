@@ -33,12 +33,12 @@ export default function GetInvolved() {
       <div className="absolute inset-0 dot-grid opacity-50" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        <div className="section-head">
           <p className="section-kicker mb-4">Join Us</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text tight-heading mb-4">
+          <h2 className="section-title mb-4">
             Get Involved
           </h2>
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+          <p className="section-description">
             There are many ways to be part of Cursor Community Cebu. Whether you
             want to learn, teach, or support — we&apos;d love to have you.
           </p>
@@ -68,7 +68,7 @@ export default function GetInvolved() {
                 </p>
                 <a
                   href={card.href}
-                  className="inline-flex items-center gap-2 py-2 text-sm font-medium text-text hover:text-accent transition-colors group/link min-h-[44px]"
+                  className="btn-tertiary group/link"
                 >
                   {card.cta}
                   <ArrowRight
@@ -95,7 +95,7 @@ export default function GetInvolved() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-lg hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all group active:bg-accent-dim"
+              className="btn-primary group"
             >
               Book an Event
               <ArrowRight

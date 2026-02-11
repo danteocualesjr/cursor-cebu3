@@ -35,7 +35,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-in-up">
           <a
             href="#events"
-            className="group flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] bg-accent text-black font-semibold rounded-md hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 transition-all active:bg-accent-dim"
+            className="group btn-primary"
           >
             Explore Events
             <ArrowRight
@@ -45,7 +45,7 @@ export default function Hero() {
           </a>
           <a
             href="#get-involved"
-            className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 min-h-[48px] surface-card text-text font-medium rounded-md hover:bg-bg-card-hover transition-colors active:bg-bg-elevated"
+            className="btn-secondary"
           >
             Apply to Speak
           </a>
