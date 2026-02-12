@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import RevealOnScroll from "./RevealOnScroll";
 import { speakers, type Speaker } from "@/data/speakers";
 
 function SpeakerCard({ speaker }: { speaker: Speaker }) {
@@ -91,6 +92,7 @@ export default function Speakers() {
     <section id="speakers" className="relative py-16 sm:py-24 lg:py-32 bg-bg overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-50" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RevealOnScroll>
         {/* Section Header */}
         <div className="section-head">
           <p className="section-kicker mb-4">Community</p>
@@ -144,6 +146,7 @@ export default function Speakers() {
             />
           </a>
         </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

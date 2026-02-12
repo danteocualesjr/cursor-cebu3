@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Calendar, MapPin, Clock, Users, ArrowRight } from "lucide-react";
+import RevealOnScroll from "./RevealOnScroll";
 import {
   events,
   EVENT_TYPE_LABELS,
@@ -116,6 +117,7 @@ export default function Events() {
     <section id="events" className="relative py-16 sm:py-24 lg:py-32 bg-bg-elevated overflow-hidden">
       <div className="absolute inset-0 grid-lines opacity-30" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RevealOnScroll>
         {/* Section Header */}
         <div className="section-head">
           <p className="section-kicker mb-4">What&apos;s Happening</p>
@@ -160,6 +162,7 @@ export default function Events() {
             </p>
           </div>
         )}
+        </RevealOnScroll>
       </div>
     </section>
   );

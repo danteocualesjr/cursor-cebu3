@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, Mail, MessageCircle } from "lucide-react";
+import RevealOnScroll from "./RevealOnScroll";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
 
 const subjects = [
@@ -35,6 +36,7 @@ export default function Contact() {
     <section id="contact" className="relative py-16 sm:py-24 lg:py-32 bg-bg overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-50" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RevealOnScroll>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Left: Info */}
           <div>
@@ -205,6 +207,7 @@ export default function Contact() {
             </form>
           </div>
         </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
+import RevealOnScroll from "./RevealOnScroll";
 import { galleryImages } from "@/data/gallery";
 
 const INITIAL_COUNT = 9;
@@ -19,6 +20,7 @@ export default function Gallery() {
     <section id="gallery" className="relative py-16 sm:py-24 lg:py-32 bg-bg-elevated overflow-hidden">
       <div className="absolute inset-0 grid-lines opacity-30" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RevealOnScroll>
         {/* Section Header */}
         <div className="section-head">
           <p className="section-kicker mb-4">Gallery</p>
@@ -80,6 +82,7 @@ export default function Gallery() {
             </button>
           </div>
         )}
+        </RevealOnScroll>
       </div>
 
       {/* Lightbox */}
