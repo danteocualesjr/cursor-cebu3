@@ -26,7 +26,7 @@ export default function Hero() {
 
         {/* Subtitle with inline stats */}
         <p className="text-base sm:text-lg lg:text-xl text-text-secondary max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed animate-fade-in-up px-1">
-          A community of <span className="font-semibold text-text">100+</span> founders, developers, designers, and builders in Cebu
+          A community of founders, developers, designers, and builders in Cebu
           — <span className="font-semibold text-text">1</span> event behind us, <span className="font-semibold text-text">5+</span> coming. Learning, creating, and shipping together with the world&apos;s best AI code editor.
         </p>
 
