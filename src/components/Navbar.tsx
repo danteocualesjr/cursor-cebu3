@@ -2,10 +2,14 @@
 
 import { useState } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { SITE_NAME, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+
+const SECTION_IDS = NAV_LINKS.map((link) => link.href.slice(1));
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const activeSection = useScrollSpy(SECTION_IDS);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/75 backdrop-blur-xl border-b border-border-light shadow-[0_8px_30px_rgba(0,0,0,0.28)]">
@@ -25,15 +29,23 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-1">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm text-text-secondary hover:text-text transition-colors rounded-md hover:bg-bg-card/80"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const sectionId = link.href.slice(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3 py-2 text-sm rounded-md hover:bg-bg-card/80 transition-colors ${
+                    isActive
+                      ? "text-accent font-medium"
+                      : "text-text-secondary hover:text-text"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
@@ -71,16 +83,24 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-bg/98 backdrop-blur-xl border-b border-border-light max-h-[calc(100vh-56px)] overflow-y-auto overscroll-contain">
           <div className="px-4 py-4 space-y-1">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3.5 min-h-[48px] flex items-center text-base text-text-secondary hover:text-text hover:bg-bg-card rounded-xl transition-colors active:bg-bg-card"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const sectionId = link.href.slice(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-3.5 min-h-[48px] flex items-center text-base rounded-xl transition-colors active:bg-bg-card ${
+                    isActive
+                      ? "text-accent font-medium bg-accent/10"
+                      : "text-text-secondary hover:text-text hover:bg-bg-card"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             <div className="pt-4 border-t border-border-light mt-4 space-y-2">
               <a
                 href={SOCIAL_LINKS.cursor}
