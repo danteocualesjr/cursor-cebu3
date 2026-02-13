@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import RevealOnScroll from "./RevealOnScroll";
 import { speakers, type Speaker } from "@/data/speakers";
@@ -7,10 +8,12 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
     <div className="group surface-card rounded-lg overflow-hidden">
       {/* Photo */}
       <div className="relative aspect-square overflow-hidden [transform:translateZ(0)]">
-        <img
+        <Image
           src={speaker.image}
           alt={speaker.name}
-          className="block w-full h-full object-cover origin-center scale-[1.01] group-hover:scale-[1.06] transition-transform duration-500 will-change-transform transform-gpu [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover origin-center scale-[1.01] group-hover:scale-[1.06] transition-transform duration-500 will-change-transform transform-gpu [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
         />
         <div className="absolute inset-x-0 bottom-0 top-0 bg-gradient-to-t from-bg-card/95 via-transparent to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-bg-card" />

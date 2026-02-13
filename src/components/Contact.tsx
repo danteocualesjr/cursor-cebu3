@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Mail, MessageCircle } from "lucide-react";
+import { Send, Mail, MessageCircle, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import RevealOnScroll from "./RevealOnScroll";
-import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
+import { CONTACT_EMAIL, FORMSPREE_FORM_ID, SOCIAL_LINKS } from "@/lib/constants";
 
 const subjects = [
   "General Inquiry",
@@ -14,6 +14,8 @@ const subjects = [
   "Other",
 ];
 
+type SubmitStatus = "idle" | "loading" | "success" | "error";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,15 +23,50 @@ export default function Contact() {
     subject: subjects[0],
     message: "",
   });
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      `[Cursor Community Cebu] ${formData.subject}`
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )}`;
-    window.open(mailtoUrl, "_blank");
+
+    // Fallback to mailto when Formspree isn't configured (anchor click avoids blank-tab issue)
+    if (!FORMSPREE_FORM_ID) {
+      const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+        `[Cursor Community Cebu] ${formData.subject}`
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+      )}`;
+      const a = document.createElement("a");
+      a.href = mailtoUrl;
+      a.click();
+      return;
+    }
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: subjects[0], message: "" });
+      } else {
+        const data = await res.json();
+        setStatus("error");
+        setErrorMessage(
+          data?.errors?.map((err: { message: string }) => err.message).join(", ") ||
+            "Something went wrong. Please try again."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
@@ -108,7 +145,17 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+            <form
+              onSubmit={handleSubmit}
+              action={FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_ID}` : undefined}
+              method="POST"
+              className="space-y-4 sm:space-y-5"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value={`[Cursor Community Cebu] ${formData.subject}`}
+              />
               {/* Name */}
               <div>
                 <label
@@ -120,6 +167,7 @@ export default function Contact() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   required
                   value={formData.name}
                   onChange={(e) =>
@@ -141,6 +189,7 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="_replyto"
                   required
                   value={formData.email}
                   onChange={(e) =>
@@ -161,6 +210,7 @@ export default function Contact() {
                 </label>
                 <select
                   id="subject"
+                  name="subject"
                   value={formData.subject}
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
@@ -185,6 +235,7 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   required
                   rows={5}
                   value={formData.message}
@@ -196,13 +247,37 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Status messages */}
+              {status === "success" && (
+                <div className="flex items-center gap-2 text-accent text-sm">
+                  <CheckCircle size={18} className="shrink-0" />
+                  <span>Thanks! Your message has been sent. We&apos;ll get back to you soon.</span>
+                </div>
+              )}
+              {status === "error" && (
+                <div className="flex items-start gap-2 text-red-500 dark:text-red-400 text-sm">
+                  <AlertCircle size={18} className="shrink-0 mt-0.5" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full btn-primary"
+                disabled={status === "loading"}
+                className="w-full btn-primary disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Message
-                <Send size={16} />
+                {status === "loading" ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send size={16} />
+                  </>
+                )}
               </button>
             </form>
           </div>

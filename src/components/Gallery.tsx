@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
 import RevealOnScroll from "./RevealOnScroll";
 import { galleryImages } from "@/data/gallery";
@@ -43,11 +44,12 @@ export default function Gallery() {
               }`}
               onClick={() => setSelectedImage(image.src)}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -98,12 +100,18 @@ export default function Gallery() {
           >
             <X size={24} />
           </button>
-          <img
-            src={selectedImage.replace("w=600&h=400", "w=1200&h=800")}
-            alt="Gallery photo enlarged"
-            className="max-w-full max-h-[85vh] object-contain rounded-lg"
+          <div
+            className="relative w-full max-w-4xl max-h-[85vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <Image
+              src={selectedImage}
+              alt="Gallery photo enlarged"
+              width={1200}
+              height={800}
+              className="max-w-full max-h-[85vh] w-auto h-auto object-contain rounded-lg"
+            />
+          </div>
         </div>
       )}
     </section>

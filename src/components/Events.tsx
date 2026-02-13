@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Calendar, MapPin, Clock, Users, ArrowRight } from "lucide-react";
 import RevealOnScroll from "./RevealOnScroll";
 import {
@@ -25,10 +26,12 @@ function EventCard({ event }: { event: CommunityEvent }) {
     <div className="group surface-card rounded-lg overflow-hidden">
       {/* Image */}
       <div className="relative h-40 sm:h-48 overflow-hidden">
-        <img
+        <Image
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent" />
         <div className="absolute top-3 left-3 flex gap-2">

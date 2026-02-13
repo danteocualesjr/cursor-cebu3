@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { SITE_NAME, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
@@ -17,10 +18,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14 sm:h-16 min-h-[56px]">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <img
+            <Image
               src="/cursor-logo.png"
               alt="Cursor logo"
-              className="w-7 h-7 logo-icon"
+              width={28}
+              height={28}
+              className="logo-icon"
             />
             <span className="font-semibold text-text text-sm tracking-tight">
               {SITE_NAME}
