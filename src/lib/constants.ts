@@ -15,6 +15,12 @@ export const SOCIAL_LINKS = {
   cursor: "https://cursor.com",
 } as const;
 
+// Personal links for Contact / Get in Touch section
+export const CONTACT_SOCIAL_LINKS = {
+  x: "https://x.com/dantecuales",
+  linkedin: "https://linkedin.com/in/dantecuales",
+} as const;
+
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Events", href: "#events" },

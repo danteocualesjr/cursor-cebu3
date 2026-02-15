@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Send, Mail, MessageCircle, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import RevealOnScroll from "./RevealOnScroll";
-import { CONTACT_EMAIL, FORMSPREE_FORM_ID, SOCIAL_LINKS } from "@/lib/constants";
+import { CONTACT_EMAIL, FORMSPREE_FORM_ID, CONTACT_SOCIAL_LINKS } from "@/lib/constants";
 
 const subjects = [
   "General Inquiry",
@@ -114,15 +114,7 @@ export default function Contact() {
                   </h3>
                   <div className="flex gap-2">
                   <a
-                    href={SOCIAL_LINKS.discord}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2.5 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-md text-sm text-text-secondary hover:text-text hover:border-accent/30 transition-all"
-                  >
-                    Discord
-                  </a>
-                  <a
-                    href={SOCIAL_LINKS.x}
+                    href={CONTACT_SOCIAL_LINKS.x}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2.5 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-md text-sm text-text-secondary hover:text-text hover:border-accent/30 transition-all"
@@ -130,7 +122,7 @@ export default function Contact() {
                     X
                   </a>
                   <a
-                    href={SOCIAL_LINKS.linkedin}
+                    href={CONTACT_SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2.5 min-h-[44px] flex items-center bg-bg-card border border-border-light rounded-md text-sm text-text-secondary hover:text-text hover:border-accent/30 transition-all"
