@@ -17,8 +17,8 @@ export const SOCIAL_LINKS = {
 
 // Personal links for Contact / Get in Touch section
 export const CONTACT_SOCIAL_LINKS = {
-  x: "https://x.com/dantecuales",
-  linkedin: "https://linkedin.com/in/dantecuales",
+  x: "https://x.com/danteocualesjr",
+  linkedin: "https://www.linkedin.com/in/danteocualesjr/",
 } as const;
 
 export const NAV_LINKS = [
