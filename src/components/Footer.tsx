@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { SITE_NAME, SOCIAL_LINKS, NAV_LINKS } from "@/lib/constants";
 
@@ -10,10 +11,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <img
+              <Image
                 src="/cursor-logo.png"
                 alt="Cursor logo"
-                className="w-7 h-7 logo-icon"
+                width={28}
+                height={28}
+                className="logo-icon"
               />
               <span className="font-semibold text-text">{SITE_NAME}</span>
             </div>

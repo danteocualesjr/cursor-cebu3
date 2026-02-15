@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BookOpen, Rocket, Users, Zap } from "lucide-react";
 import RevealOnScroll from "./RevealOnScroll";
 
@@ -88,10 +89,12 @@ export default function Mission() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 group"
             >
-              <img
+              <Image
                 src="/cursor-logo.png"
                 alt="Cursor logo"
-                className="w-8 h-8 logo-icon"
+                width={32}
+                height={32}
+                className="logo-icon"
               />
               <span className="text-2xl font-bold text-text group-hover:text-accent transition-colors">
                 Cursor
