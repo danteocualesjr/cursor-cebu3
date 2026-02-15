@@ -12,7 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cursorcommunitycebu.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Cursor Community Cebu — Where Cebu Builds with Cursor",
   icons: {
     icon: "/cursor-logo.png",
