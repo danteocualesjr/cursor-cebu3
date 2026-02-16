@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
 import RevealOnScroll from "./RevealOnScroll";
@@ -11,6 +11,50 @@ const INITIAL_COUNT = 9;
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const closeLightbox = useCallback(() => setSelectedImage(null), []);
+
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeLightbox();
+      }
+      if (e.key === "Tab") {
+        const dialog = document.querySelector("[role='dialog']");
+        if (!dialog) return;
+        const focusables = Array.from(
+          dialog.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => !el.hasAttribute("disabled"));
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage, closeLightbox]);
 
   const displayedImages = isExpanded
     ? galleryImages
@@ -90,13 +134,20 @@ export default function Gallery() {
       {/* Lightbox */}
       {selectedImage && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="lightbox-title"
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
+          onClick={closeLightbox}
         >
+          <span id="lightbox-title" className="sr-only">
+            Gallery photo enlarged
+          </span>
           <button
-            onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-text-secondary hover:text-text transition-colors"
-            aria-label="Close lightbox"
+            ref={closeButtonRef}
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-text-secondary hover:text-text transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-black/50"
+            aria-label="Close lightbox (Escape)"
           >
             <X size={24} />
           </button>
