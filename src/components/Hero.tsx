@@ -30,23 +30,54 @@ export default function Hero() {
           — <span className="font-semibold text-text">1</span> event behind us, <span className="font-semibold text-text">5+</span> coming. Learning, creating, and shipping together with the world&apos;s best AI code editor.
         </p>
 
+        {/* Upcoming Event Banner */}
+        <a
+          href="https://luma.com/rphafsri"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block max-w-md mx-auto mb-6 sm:mb-8 animate-fade-in-up animate-delay-250"
+        >
+          <div className="surface-card rounded-lg p-4 sm:p-5 border border-border-light/50 hover:border-accent/50 transition-colors group">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="shrink-0 w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                <span className="text-accent font-bold text-sm">28</span>
+              </div>
+              <div className="flex-1 min-w-0 text-left">
+                <p className="text-xs font-medium text-accent mb-0.5">Feb 28, 2026</p>
+                <p className="text-base font-semibold text-text group-hover:text-accent transition-colors">
+                  Cursor Workshop Cebu
+                </p>
+                <p className="text-sm text-text-secondary mt-1">
+                  Beginner-friendly intro to Cursor · Zoom · Register free
+                </p>
+              </div>
+              <ArrowRight
+                size={18}
+                className="shrink-0 text-text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all"
+              />
+            </div>
+          </div>
+        </a>
+
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-in-up animate-delay-300">
           <a
-            href="#events"
+            href="https://luma.com/rphafsri"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group btn-primary"
           >
-            Explore Events
+            Register for Workshop
             <ArrowRight
               size={16}
               className="group-hover:translate-x-0.5 transition-transform"
             />
           </a>
           <a
-            href="#get-involved"
+            href="#events"
             className="btn-secondary"
           >
-            Apply to Speak
+            Explore All Events
           </a>
         </div>
       </div>
