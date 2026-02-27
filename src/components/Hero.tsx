@@ -1,12 +1,22 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Sparkles, Zap } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-bg dot-grid" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full blur-[120px] hero-bg-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] hero-bg-glow-2" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full blur-[120px] hero-bg-glow animate-glow-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] hero-bg-glow-2 animate-glow-drift" />
+      <div className="absolute top-1/3 right-1/3 w-[300px] h-[300px] rounded-full blur-[90px] hero-bg-glow-3 animate-glow-pulse-slow" />
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="hero-particle hero-particle-1" />
+        <div className="hero-particle hero-particle-2" />
+        <div className="hero-particle hero-particle-3" />
+        <div className="hero-particle hero-particle-4" />
+        <div className="hero-particle hero-particle-5" />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-12 sm:pt-24 sm:pb-16">
         {/* Badge */}
@@ -35,26 +45,43 @@ export default function Hero() {
           href="https://luma.com/rphafsri"
           target="_blank"
           rel="noopener noreferrer"
-          className="block max-w-md mx-auto mb-6 sm:mb-8 animate-fade-in-up animate-delay-250"
+          className="event-banner-link block max-w-lg mx-auto mb-8 sm:mb-10 animate-fade-in-up animate-delay-250"
         >
-          <div className="surface-card rounded-lg p-4 sm:p-5 border border-border-light/50 hover:border-accent/50 transition-colors group">
-            <div className="flex items-start gap-3 sm:gap-4">
-              <div className="shrink-0 w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                <span className="text-accent font-bold text-sm">28</span>
+          <div className="event-banner group">
+            <div className="event-banner-glow" />
+            <div className="event-banner-shimmer" />
+            <div className="relative z-10 flex items-center gap-4 sm:gap-5">
+              <div className="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border border-accent/20 flex flex-col items-center justify-center">
+                <span className="text-[10px] uppercase tracking-wider text-accent/80 font-medium leading-none">Feb</span>
+                <span className="text-accent font-bold text-xl sm:text-2xl leading-none mt-0.5">28</span>
               </div>
               <div className="flex-1 min-w-0 text-left">
-                <p className="text-xs font-medium text-accent mb-0.5">Feb 28, 2026</p>
-                <p className="text-base font-semibold text-text group-hover:text-accent transition-colors">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent/15 text-[11px] font-semibold text-accent uppercase tracking-wider">
+                    <Zap size={10} className="fill-accent" />
+                    Next Event
+                  </span>
+                </div>
+                <p className="text-lg sm:text-xl font-bold text-text group-hover:text-accent transition-colors duration-300">
                   Cursor Workshop Cebu
                 </p>
-                <p className="text-sm text-text-secondary mt-1">
-                  Beginner-friendly intro to Cursor · Zoom · Register free
-                </p>
+                <div className="flex items-center gap-3 mt-1.5 text-sm text-text-secondary">
+                  <span className="flex items-center gap-1">
+                    <Calendar size={12} className="text-text-muted" />
+                    Feb 28, 2026
+                  </span>
+                  <span className="text-text-faint">·</span>
+                  <span>Zoom</span>
+                  <span className="text-text-faint">·</span>
+                  <span className="text-accent/80 font-medium">Free</span>
+                </div>
               </div>
-              <ArrowRight
-                size={18}
-                className="shrink-0 text-text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all"
-              />
+              <div className="shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
+                <ArrowRight
+                  size={16}
+                  className="text-accent group-hover:translate-x-0.5 transition-transform duration-300"
+                />
+              </div>
             </div>
           </div>
         </a>
@@ -65,8 +92,9 @@ export default function Hero() {
             href="https://luma.com/rphafsri"
             target="_blank"
             rel="noopener noreferrer"
-            className="group btn-primary"
+            className="group btn-primary btn-glow"
           >
+            <Sparkles size={16} className="opacity-80" />
             Register for Workshop
             <ArrowRight
               size={16}
