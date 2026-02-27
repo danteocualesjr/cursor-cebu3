@@ -36,7 +36,7 @@ export const opportunities: JobOpportunity[] = [
     type: "full-time",
     workMode: "remote",
     location: "Work from Home",
-    applyUrl: "https://ph.indeed.com/job/billing-support-associate-7625fd9668269188",
+    applyUrl: "",
     postedAt: "2025-02-01",
   },
   {
@@ -48,7 +48,7 @@ export const opportunities: JobOpportunity[] = [
     type: "full-time",
     workMode: "remote",
     location: "Remote",
-    applyUrl: "https://cursor.com/careers",
+    applyUrl: "",
     postedAt: "2025-02-01",
   },
   {
@@ -60,7 +60,7 @@ export const opportunities: JobOpportunity[] = [
     type: "full-time",
     workMode: "hybrid",
     location: "Cebu City",
-    applyUrl: "https://cursor.com/careers",
+    applyUrl: "",
     postedAt: "2025-02-05",
   },
 ];
