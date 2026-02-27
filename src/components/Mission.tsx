@@ -6,24 +6,32 @@ const pillars = [
   {
     icon: BookOpen,
     title: "Learn",
+    accent: "from-blue-500/20 to-blue-500/0",
+    iconAccent: "group-hover:border-blue-400/60 group-hover:text-blue-400 group-hover:shadow-[0_0_20px_rgba(96,165,250,0.15)]",
     description:
       "Workshops and sessions that make AI-assisted development accessible to everyone — from first-time coders to seasoned engineers.",
   },
   {
     icon: Rocket,
     title: "Build",
+    accent: "from-accent/20 to-accent/0",
+    iconAccent: "group-hover:border-accent/60 group-hover:text-accent group-hover:shadow-[0_0_20px_rgba(249,115,22,0.15)]",
     description:
       "Hackathons and build sessions where ideas become real products. Bring a napkin sketch, leave with a working prototype.",
   },
   {
     icon: Users,
     title: "Collaborate",
+    accent: "from-emerald-500/20 to-emerald-500/0",
+    iconAccent: "group-hover:border-emerald-400/60 group-hover:text-emerald-400 group-hover:shadow-[0_0_20px_rgba(52,211,153,0.15)]",
     description:
       "A space where founders meet developers, designers find engineers, and everyone learns from each other's Cursor workflows.",
   },
   {
     icon: Zap,
     title: "Ship",
+    accent: "from-amber-500/20 to-amber-500/0",
+    iconAccent: "group-hover:border-amber-400/60 group-hover:text-amber-400 group-hover:shadow-[0_0_20px_rgba(251,191,36,0.15)]",
     description:
       "We celebrate shipping. From side projects to startup MVPs, our community is about turning ideas into products that reach users.",
   },
@@ -56,21 +64,27 @@ export default function Mission() {
             return (
               <div
                 key={pillar.title}
-                className="group relative p-5 sm:p-6 surface-card rounded-lg"
+                className="group relative p-5 sm:p-6 pillar-card rounded-xl overflow-hidden"
               >
-                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-border-light to-transparent group-hover:via-accent/30 transition-colors" />
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 bg-bg-elevated rounded-md flex items-center justify-center border border-border-light group-hover:border-accent/50 group-hover:text-accent transition-colors">
-                    <Icon size={18} />
+                {/* Colored top glow on hover */}
+                <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${pillar.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-px pillar-top-line" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className={`w-11 h-11 bg-bg-elevated rounded-lg flex items-center justify-center border border-border-light transition-all duration-300 ${pillar.iconAccent}`}>
+                      <Icon size={20} strokeWidth={1.8} />
+                    </div>
+                    <span className="text-[11px] text-text-faint font-mono tracking-widest uppercase">0{index + 1}</span>
                   </div>
-                  <span className="text-xs text-text-faint font-mono">0{index + 1}</span>
+                  <h3 className="text-xl font-bold text-text mb-2.5 tracking-tight">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {pillar.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-text mb-2">
-                  {pillar.title}
-                </h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {pillar.description}
-                </p>
               </div>
             );
           })}
