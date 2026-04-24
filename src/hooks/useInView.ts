@@ -25,8 +25,10 @@ export function useInView({
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReducedMotion) {
-      setIsInView(true);
-      return;
+      const animationFrame = window.requestAnimationFrame(() => {
+        setIsInView(true);
+      });
+      return () => window.cancelAnimationFrame(animationFrame);
     }
 
     const observer = new IntersectionObserver(

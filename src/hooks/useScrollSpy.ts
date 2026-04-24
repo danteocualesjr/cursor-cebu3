@@ -8,10 +8,13 @@ import { useEffect, useState } from "react";
  */
 export function useScrollSpy(sectionIds: string[], offset = 120) {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const sectionIdsKey = sectionIds.join(",");
 
   useEffect(() => {
+    const ids = sectionIdsKey.split(",").filter(Boolean);
+
     const handleScroll = () => {
-      const sections = sectionIds
+      const sections = ids
         .map((id) => document.getElementById(id))
         .filter((el): el is HTMLElement => el != null);
 
@@ -22,13 +25,13 @@ export function useScrollSpy(sectionIds: string[], offset = 120) {
           current = section.id;
         }
       }
-      setActiveId(current ?? sectionIds[0]);
+      setActiveId(current ?? ids[0] ?? null);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sectionIds.join(","), offset]);
+  }, [sectionIdsKey, offset]);
 
   return activeId;
 }
