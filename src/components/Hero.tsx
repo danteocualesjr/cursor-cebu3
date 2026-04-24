@@ -42,7 +42,7 @@ export default function Hero() {
 
         {/* Upcoming Event Banner */}
         <a
-          href="https://luma.com/rphafsri"
+          href="https://luma.com/khodfwxv"
           target="_blank"
           rel="noopener noreferrer"
           className="event-banner-link block max-w-lg mx-auto mb-8 sm:mb-10 animate-fade-in-up animate-delay-250"
@@ -89,7 +89,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-in-up animate-delay-300">
           <a
-            href="https://luma.com/rphafsri"
+            href="https://luma.com/khodfwxv"
             target="_blank"
             rel="noopener noreferrer"
             className="group btn-primary btn-glow"
