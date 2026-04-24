@@ -24,17 +24,16 @@ export const EVENT_TYPE_LABELS: Record<EventType, string> = {
 
 export const events: CommunityEvent[] = [
   {
-    id: "cursor-workshop-cebu-feb-2026",
+    id: "cursor-workshop-cebu-apr-2026",
     title: "Cursor Workshop Cebu",
     description:
       "A beginner-friendly, hands-on introduction to Cursor. Learn what Cursor is, set it up properly, use it effectively, and build a simple web app and game live. No prior coding experience required.",
-    date: "February 28, 2026",
-    time: "Online (Zoom link sent after registration)",
+    date: "April 25, 2026",
+    time: "9:00 AM - 10:30 AM GMT+8",
     location: "Zoom",
     type: "workshop",
     status: "upcoming",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
-    capacity: 132,
     registrationUrl: "https://luma.com/khodfwxv",
   },
   {

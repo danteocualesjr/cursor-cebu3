@@ -52,8 +52,8 @@ export default function Hero() {
             <div className="event-banner-shimmer" />
             <div className="relative z-10 flex items-center gap-4 sm:gap-5">
               <div className="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border border-accent/20 flex flex-col items-center justify-center">
-                <span className="text-[10px] uppercase tracking-wider text-accent/80 font-medium leading-none">Feb</span>
-                <span className="text-accent font-bold text-xl sm:text-2xl leading-none mt-0.5">28</span>
+                <span className="text-[10px] uppercase tracking-wider text-accent/80 font-medium leading-none">Apr</span>
+                <span className="text-accent font-bold text-xl sm:text-2xl leading-none mt-0.5">25</span>
               </div>
               <div className="flex-1 min-w-0 text-left">
                 <div className="flex items-center gap-2 mb-1">
@@ -68,10 +68,10 @@ export default function Hero() {
                 <div className="flex items-center gap-3 mt-1.5 text-sm text-text-secondary">
                   <span className="flex items-center gap-1">
                     <Calendar size={12} className="text-text-muted" />
-                    Feb 28, 2026
+                    Apr 25, 2026
                   </span>
                   <span className="text-text-faint">·</span>
-                  <span>Zoom</span>
+                  <span>9:00 AM GMT+8</span>
                   <span className="text-text-faint">·</span>
                   <span className="text-accent/80 font-medium">Free</span>
                 </div>
